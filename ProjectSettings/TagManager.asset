@@ -38,9 +38,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background layer
+    uniqueID: 2205512221
+    locked: 0
+  - name: details layer
+    uniqueID: 2244744471
+    locked: 0
+  - name: details layer 1
+    uniqueID: 294964751
+    locked: 0
+  - name: details layer 2
+    uniqueID: 2434071005
+    locked: 0
+  - name: details layer 3
+    uniqueID: 2596381829
+    locked: 0
+  - name: character layer
+    uniqueID: 2097263629
+    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: alex layer
-    uniqueID: 2205512221
     locked: 0
