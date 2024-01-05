@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - backrgound
+  - house
+  - street/pavement
+  - tree/trash
+  - car/light
+  - character layer
   - 
   - 
   - 
@@ -41,16 +41,16 @@ TagManager:
   - name: background layer
     uniqueID: 2205512221
     locked: 0
-  - name: details layer
+  - name: house
     uniqueID: 2244744471
     locked: 0
-  - name: details layer 1
+  - name: street/pavement
     uniqueID: 294964751
     locked: 0
-  - name: details layer 2
+  - name: tree/trash
     uniqueID: 2434071005
     locked: 0
-  - name: details layer 3
+  - name: car/light
     uniqueID: 2596381829
     locked: 0
   - name: character layer
