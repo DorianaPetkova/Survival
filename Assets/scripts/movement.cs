@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
+[DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
 public class movement : MonoBehaviour
 {
     [SerializeField] private int speed = 50;
@@ -13,9 +16,11 @@ public class movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
     }
     private void OnMovement(InputValue value)
     {
+
         move = value.Get<Vector2>();
         if (move.x != 0 || move.y != 0)
         {
@@ -23,6 +28,7 @@ public class movement : MonoBehaviour
             animator.SetFloat("Y", move.y);
 
             animator.SetBool("IsWalking", true);
+
         }
         else
             animator.SetBool("IsWalking", false);
@@ -32,5 +38,8 @@ public class movement : MonoBehaviour
         rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
     }
 
-
+    private string GetDebuggerDisplay()
+    {
+        return ToString();
+    }
 }

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SceneTransition
   layers:
   - Default
   - TransparentFX
@@ -55,6 +56,9 @@ TagManager:
     locked: 0
   - name: character layer
     uniqueID: 2097263629
+    locked: 0
+  - name: table layer
+    uniqueID: 1873985443
     locked: 0
   - name: Default
     uniqueID: 0
