@@ -407,8 +407,8 @@ Transform:
   m_GameObject: {fileID: 908632860}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 383.4147, y: 243.8835, z: -0.61294794}
-  m_LocalScale: {x: 60.922073, y: 63.105877, z: 36.504604}
+  m_LocalPosition: {x: 386.5391, y: 245.4457, z: -0.61294794}
+  m_LocalScale: {x: 68.0004, y: 63.509754, z: 36.504604}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 1509312702}
   - component: {fileID: 1509312701}
   m_Layer: 0
-  m_Name: drawer (1)
+  m_Name: vase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ Transform:
   m_GameObject: {fileID: 1509312699}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 709.4, y: 231.4, z: -0.61294794}
+  m_LocalPosition: {x: 752, y: 233, z: -0.61294794}
   m_LocalScale: {x: 64.583984, y: 62.87951, z: 36.504604}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -751,7 +751,7 @@ Transform:
   m_GameObject: {fileID: 1620422829}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 709.9, y: 104.1, z: -0.61294794}
+  m_LocalPosition: {x: 751, y: 106, z: -0.61294794}
   m_LocalScale: {x: 64.583984, y: 62.87951, z: 36.504604}
   m_ConstrainProportionsScale: 0
   m_Children: []

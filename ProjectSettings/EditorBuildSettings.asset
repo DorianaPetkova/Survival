@@ -45,9 +45,36 @@ EditorBuildSettings:
     path: Assets/Scenes/OfficeSetting2.unity
     guid: 16f25ed93c52c9a45b094bf95bf2ca4e
   - enabled: 1
-    path: Assets/Scenes/Stairs 1.unity
-    guid: 4b62a326a0ac8d34ca241d347aab9d7f
+    path: Assets/Scenes/Stairs floor 5.unity
+    guid: 52d2585cd6d89054da51bf55025c3597
   - enabled: 1
-    path: Assets/Scenes/Stairs 2.unity
-    guid: 6301be197e22eee4285a8f133c0838ee
+    path: Assets/Scenes/Stairs floor 4-5.unity
+    guid: 130c1328b5473214ea68a3a3c7ec5608
+  - enabled: 1
+    path: Assets/Scenes/Stairs floor 4.unity
+    guid: 766e691f818191544908ee831c5b06f9
+  - enabled: 1
+    path: Assets/Scenes/Stairs floor 3-4.unity
+    guid: ae8c7d94bfd84254b919e832c78887d1
+  - enabled: 1
+    path: Assets/Scenes/Stairs floor 3.unity
+    guid: d9f933ef404bb984aa60bba17aba33f8
+  - enabled: 1
+    path: Assets/Scenes/Stairs floor 2-3.unity
+    guid: 4867fc4bec8d5b540a933c3efa5d818e
+  - enabled: 1
+    path: Assets/Scenes/Stairs floor 2.unity
+    guid: f7a0e8ed146961041a30ce6c923096f8
+  - enabled: 1
+    path: Assets/Scenes/Stairs floor 1-2.unity
+    guid: 5cfb67da19a094f438434fc5b17cd41f
+  - enabled: 1
+    path: Assets/Scenes/Stairs floor 5-6.unity
+    guid: ed5f01de63bd23c4dbbbca979d9ff026
+  - enabled: 1
+    path: Assets/Scenes/roof.unity
+    guid: 0e6514583d6394e43a8baabbdde407b9
+  - enabled: 1
+    path: Assets/Scenes/OfficeEntrance 2.unity
+    guid: 9c2ebb3e4002e544cb72f1e218565cf6
   m_configObjects: {}
