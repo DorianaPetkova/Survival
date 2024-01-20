@@ -8,6 +8,7 @@ public class SavingInfo : MonoBehaviour
     public GameObject maleCharacter;
     public GameObject femaleCharacter;
 
+
     private void Start()
     {
         // Load the selected character based on GameController information

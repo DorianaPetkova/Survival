@@ -35,4 +35,5 @@ public class GameController : MonoBehaviour
 
     // Add any other variables or methods related to game state here
     public string selectedCharacter;
+    public string selectedLevel;
 }
