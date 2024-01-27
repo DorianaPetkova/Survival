@@ -9,6 +9,7 @@ public class Ebutton : MonoBehaviour
     [SerializeField] public SpriteRenderer interactionSprite;
     [SerializeField] public string sceneToLoad;
 
+
     private void Start()
     {
         // Ensure the script starts with the sprite disabled.
@@ -23,6 +24,7 @@ public class Ebutton : MonoBehaviour
             interactionSprite.enabled = true;
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D other)
     {

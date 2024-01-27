@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedCharacter: 
+  selectedLevel: 
 --- !u!4 &7343668
 Transform:
   m_ObjectHideFlags: 0
@@ -300,7 +301,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2097263629
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 6
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -325,7 +326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f402ca045cd942242ba1737856d078af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 12
+  sceneBuildIndex: 21
+  NextScene: 0
+  sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
 --- !u!61 &580058598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -380,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 580058594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 386, y: 401, z: 2.9973493}
+  m_LocalPosition: {x: 389, y: 379, z: 2.9973493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -524,6 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1220230716}
+  - component: {fileID: 1220230717}
   - component: {fileID: 1220230715}
   - component: {fileID: 1220230714}
   - component: {fileID: 1220230713}
@@ -731,7 +735,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2097263629
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba8a0b824c21f764ba9b6307934f2603, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -763,6 +767,24 @@ RectTransform:
   m_AnchoredPosition: {x: 188, y: 131}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1220230717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220230708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16311436402d3fa46a0aa9af3047778a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entrance: {fileID: 580058594}
+  exit: {fileID: 1891915810}
+  thirddoor: {fileID: 0}
+  sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
+  offsetX: 90
+  offsetY: 60
 --- !u!1 &1272439435
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +801,7 @@ GameObject:
   - component: {fileID: 1272439438}
   - component: {fileID: 1272439437}
   - component: {fileID: 1272439436}
+  - component: {fileID: 1272439444}
   m_Layer: 5
   m_Name: alex (1)
   m_TagString: Player
@@ -979,7 +1002,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2097263629
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 02db835f50d566440a90d35820702877, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1011,6 +1034,24 @@ RectTransform:
   m_AnchoredPosition: {x: 188, y: 134}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1272439444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272439435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16311436402d3fa46a0aa9af3047778a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entrance: {fileID: 580058594}
+  exit: {fileID: 1891915810}
+  thirddoor: {fileID: 0}
+  sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
+  offsetX: 90
+  offsetY: 60
 --- !u!1 &1619434630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1498,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2097263629
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 6
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1482,7 +1523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f402ca045cd942242ba1737856d078af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 14
+  sceneBuildIndex: 19
+  NextScene: 1
+  sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
 --- !u!61 &1891915814
 BoxCollider2D:
   m_ObjectHideFlags: 0

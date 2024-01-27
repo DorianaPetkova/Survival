@@ -5,28 +5,28 @@ using UnityEngine;
 public class DepthSorter2D : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject character;
+    public float speed = 5f;
 
     void Update()
     {
-        if (character == null)
-        {
-            Debug.LogError("Character GameObject is not assigned.");
-            return;
-        }
+        // Player movement
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 movement = new Vector2(horizontalInput, verticalInput);
+        transform.Translate(movement * speed * Time.deltaTime);
 
-        SpriteRenderer characterRenderer = character.GetComponent<SpriteRenderer>();
-        SpriteRenderer objectRenderer = GetComponent<SpriteRenderer>();
+        // Check for collisions with the table
+        Collider2D tableCollider = null; // Set this to the actual collider of your table
+        bool isCollidingWithTable = Physics2D.IsTouchingLayers(GetComponent<Collider2D>(), 1 << LayerMask.NameToLayer("Table"));
 
-        if (character.transform.localScale.y > transform.localScale.y)
+        // Adjust sorting order based on the player's position relative to the table
+        if (isCollidingWithTable)
         {
-            // If character is above the object, set sorting order behind
-            characterRenderer.sortingOrder = objectRenderer.sortingOrder - 1;
+            GetComponent<SpriteRenderer>().sortingOrder = tableCollider.transform.position.y > transform.position.y ? 1 : -1;
         }
         else
         {
-            // If character is below the object, set sorting order in front
-            characterRenderer.sortingOrder = objectRenderer.sortingOrder + 1;
+            GetComponent<SpriteRenderer>().sortingOrder = 0; // Reset sorting order if not colliding
         }
     }
 }

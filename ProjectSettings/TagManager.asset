@@ -54,11 +54,11 @@ TagManager:
   - name: car/light
     uniqueID: 2596381829
     locked: 0
-  - name: character layer
-    uniqueID: 2097263629
-    locked: 0
   - name: table layer
     uniqueID: 1873985443
+    locked: 0
+  - name: character layer
+    uniqueID: 2097263629
     locked: 0
   - name: Default
     uniqueID: 0
