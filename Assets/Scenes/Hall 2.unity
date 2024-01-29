@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrance: {fileID: 871323901}
   exit: {fileID: 712011430}
+  thirdDoor: {fileID: 0}
   sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
   offsetX: 90
   offsetY: 60
@@ -766,7 +767,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneBuildIndex: 12
   NextScene: 1
+  isThirdDoor: 0
+  CheckForEButton: 0
   sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
+  interactionSprite: {fileID: 0}
 --- !u!61 &712011434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1019,6 +1023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrance: {fileID: 871323901}
   exit: {fileID: 712011430}
+  thirdDoor: {fileID: 0}
   sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
   offsetX: 90
   offsetY: 60
@@ -1206,7 +1211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneBuildIndex: 10
   NextScene: 0
+  isThirdDoor: 0
+  CheckForEButton: 0
   sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
+  interactionSprite: {fileID: 0}
 --- !u!61 &871323905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1494,8 +1502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ac7b9223c44fa48a76fbbccf28dcd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maleCharacter: {fileID: 0}
-  femaleCharacter: {fileID: 0}
+  maleCharacter: {fileID: 520130620}
+  femaleCharacter: {fileID: 804650477}
 --- !u!4 &1919601442
 Transform:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class LevelMoveNext : MonoBehaviour
     // Start is called before the first frame update
     public GameObject entrance;
     public GameObject exit;
-    public GameObject thirddoor;
+    public GameObject thirdDoor;
     [SerializeField] public SceneInfo sceneinfo;
     public float offsetX = 0f; public float offsetY = 0f;
 
@@ -20,6 +20,7 @@ public class LevelMoveNext : MonoBehaviour
     void Start()
     {
         int sceneBuildIndex = LevelMove.sceneBuildIndexPass;
+
         if (sceneinfo.NextScene) // Coming from entrance
         {
             if (entrance != null)
@@ -49,39 +50,57 @@ public class LevelMoveNext : MonoBehaviour
                 {
                     Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 75), -(offsetY + 40), 0f);
                     body.position = startingPosition;
-                    Debug.Log($"{body.position}");
-                    Debug.Log($"{entrance.transform.position}");
-                    Debug.Log($"{offsetX - 60} {offsetY}");
+
                 }
                 else if (sceneBuildIndex == 14 || sceneBuildIndex == 17 || sceneBuildIndex == 19 || sceneBuildIndex == 21 || sceneBuildIndex == 23)
                 {
                     Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 60), -(offsetY + 30), 0f);
                     body.position = startingPosition;
                 }
+                else if (sceneBuildIndex == 12)
+                {
+                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX + 70), +(offsetY + 200), 0f);
+                    body.position = startingPosition;
+                }
+                else if (sceneBuildIndex == 13)
+                {
+                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 40), (offsetY + 135), 0f);
+                    body.position = startingPosition;
+
+                }
+
                 else
                 {
                     Vector3 startingPosition = entrance.transform.position + new Vector3(offsetX, offsetY, 0f);
                     body.position = startingPosition;
                     Debug.Log($"ON THE LEFT SIDE");
-                    Debug.Log($"{sceneBuildIndex}");
+
 
                 }
                 //Debug.Log($"wrong exit: {body.position}");
             }
         }
-        else if (sceneinfo.ThirdDoor)
+        else if (sceneinfo.isThirdDoor) // Coming from the third door
         {
-            if (thirddoor != null)
+            Debug.Log("third door?");
+            if (sceneBuildIndex == 12)
             {
-                Vector3 startingPosition = thirddoor.transform.position + new Vector3(offsetX - 80, offsetY + 90, 0f);
+                Vector3 startingPosition = thirdDoor.transform.position + new Vector3((offsetX - 10), -(offsetY + 70), 0f);
                 body.position = startingPosition;
             }
+            else if (sceneBuildIndex == 14)
+            {
+                Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 30), -(offsetY + 80), 0f);
+                body.position = startingPosition;
+
+            }
         }
+
         else // Coming from exit
         {
             if (exit != null)
             {
-                Debug.Log($"ON THE RIGHT SIDE");
+
                 //Debug.Log($"{LevelMove.sceneBuildIndexPass}");
                 if (sceneBuildIndex == 5)
                 {
@@ -112,8 +131,14 @@ public class LevelMoveNext : MonoBehaviour
                 }
                 else if (sceneBuildIndex == 11)
                 {
-                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX + 15), +(offsetY + 30), 0f);
+                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX + 50), +(offsetY + 30), 0f);
                     body.position = startingPosition;
+                }
+                else if (sceneBuildIndex == 12)
+                {
+                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 30), -(offsetY + 80), 0f);
+                    body.position = startingPosition;
+
                 }
                 else if (sceneBuildIndex == 15 || sceneBuildIndex == 16 || sceneBuildIndex == 18 || sceneBuildIndex == 20 || sceneBuildIndex == 22)
                 {
@@ -124,10 +149,12 @@ public class LevelMoveNext : MonoBehaviour
                 {
                     Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 55), -(offsetY + 50), 0f);
                     body.position = startingPosition;
-                    Debug.Log($"Exit position: {body.position}");
-                    Debug.Log($"Collider position: {entrance.transform.position}");
-                    Debug.Log($"offset: {offsetX - 40} {offsetY}");
 
+                }
+                else if (sceneBuildIndex == 12)
+                {
+                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX), -(offsetY + 50), 0f);
+                    body.position = startingPosition;
                 }
                 else
                 {

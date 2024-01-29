@@ -58,12 +58,12 @@ public class Elevator2 : MonoBehaviour
             one.SetActive(false);
             colliderOne.SetActive(false);
             colliderTwo.SetActive(false);
-            toOne.SetActive(false);
-            toTwo.SetActive(false);
+
             GlideObject(originalPosition1, glideDistance1, glidingObject1);
 
             // Glide the second object back to its original position
             GlideObject(originalPosition2, glideDistance2, glidingObject2);
+
         }
     }
 

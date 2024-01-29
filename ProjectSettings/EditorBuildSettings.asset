@@ -92,4 +92,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 97676f2f36b11794fad047067118d513
+  - enabled: 1
+    path: Assets/Scenes/Janitor's closet.unity
+    guid: 950c732699fc8634d9d1074ce37c4122
   m_configObjects: {}
