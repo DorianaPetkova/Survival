@@ -92,7 +92,14 @@ public class LevelMoveNext : MonoBehaviour
             {
                 Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 30), -(offsetY + 80), 0f);
                 body.position = startingPosition;
+            }
+            else if (sceneBuildIndex == 7)
+            {
 
+                Vector3 startingPosition = exit.transform.position - new Vector3((offsetX - 20), (offsetY - 55), 0f);
+                body.position = startingPosition;
+                Debug.Log($"exit: {exit.transform.position}");
+                Debug.Log($"position: {body.position}");
             }
         }
 

@@ -14,7 +14,8 @@ public class Elevatorscript : MonoBehaviour
     public float glideDistance2 = 119.0f;
     public float glideSpeed = 2.0f;
     private Vector3 originalPosition1; // Store the original position of the first gliding object
-    private Vector3 originalPosition2; //
+    private Vector3 originalPosition2;
+
 
 
 
@@ -28,6 +29,7 @@ public class Elevatorscript : MonoBehaviour
 
         originalPosition1 = glidingObject1.transform.position;
         originalPosition2 = glidingObject2.transform.position;
+
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -63,6 +65,8 @@ public class Elevatorscript : MonoBehaviour
             {
                 // Player pressed the UpArrow key
                 ShowUpArrowEffect();
+
+
                 GlideObject(originalPosition1 + Vector3.right * glideDistance1, glideDistance1, glidingObject1);
                 GlideObject(originalPosition2 - Vector3.right * glideDistance2, glideDistance2, glidingObject2);
 
@@ -72,6 +76,7 @@ public class Elevatorscript : MonoBehaviour
             {
                 // Player pressed the DownArrow key
                 ShowDownArrowEffect();
+
                 GlideObject(originalPosition1 + Vector3.right * glideDistance1, glideDistance1, glidingObject1);
                 GlideObject(originalPosition2 - Vector3.right * glideDistance2, glideDistance2, glidingObject2);
 
@@ -100,13 +105,13 @@ public class Elevatorscript : MonoBehaviour
     private void GlideObject(Vector3 targetPosition, float distance, GameObject glidingObject)
     {
         // Smoothly move the object to the target position
-        StartCoroutine(GlideObjectCoroutine(targetPosition, distance, glidingObject));
+        if (glidingObject.activeSelf && glidingObject != null)
+        {
+            // Smoothly move the object to the target position
+            StartCoroutine(GlideObjectCoroutine(targetPosition, distance, glidingObject));
+        }
     }
-    private void GlideObject1(Vector3 targetPosition, float distance, GameObject glidingObject)
-    {
-        // Smoothly move the object to the target position
-        StartCoroutine(GlideObjectCoroutine(targetPosition, distance, glidingObject));
-    }
+
 
 
     private IEnumerator GlideObjectCoroutine(Vector3 targetPosition, float distance, GameObject glidingObject)
@@ -114,7 +119,7 @@ public class Elevatorscript : MonoBehaviour
         float elapsedTime = 0f;
         glidingObject.SetActive(true);
 
-        while (elapsedTime < glideSpeed)
+        while (glidingObject != null && elapsedTime < glideSpeed)
         {
             glidingObject.transform.position = Vector3.Lerp(glidingObject.transform.position, targetPosition, elapsedTime / glideSpeed);
             elapsedTime += Time.deltaTime;
@@ -122,7 +127,11 @@ public class Elevatorscript : MonoBehaviour
         }
 
         // Ensure the object reaches the target position precisely
-        glidingObject.transform.position = targetPosition;
+        if (glidingObject != null)
+        {
+            glidingObject.transform.position = targetPosition;
+        }
     }
+
 
 }
