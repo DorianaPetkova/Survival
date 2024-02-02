@@ -68,10 +68,9 @@ public class LevelMove : MonoBehaviour
             if (playerInside && interactionSprite.enabled && interactionSprite != null && Input.GetKeyDown(KeyCode.E))
             {
                 LoadScene();
-
             }
-
         }
+
         // Check if the player is inside the trigger, sprite is enabled, and pressed 'E'.
     }
 

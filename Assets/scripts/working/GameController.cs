@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -31,16 +32,30 @@ public class GameController : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+
     }
 
     // Add any other variables or methods related to game state here
     public string selectedCharacter;
     public string selectedLevel;
     private bool sceneVisited = false;
+    private bool sceneVisited1 = false;
+    private bool sceneVisited2 = false;
 
     public bool SceneVisited
     {
         get { return sceneVisited; }
         set { sceneVisited = value; }
     }
+    public bool SceneVisited1
+    {
+        get { return sceneVisited1; }
+        set { sceneVisited1 = value; }
+    }
+    public bool SceneVisited2
+    {
+        get { return sceneVisited2; }
+        set { sceneVisited2 = value; }
+    }
+
 }

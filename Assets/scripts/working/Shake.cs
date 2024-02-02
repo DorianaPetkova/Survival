@@ -15,6 +15,8 @@ public class Shake : MonoBehaviour
     private float delayTimer = 2f; // Delay before starting the shake
     private float currentDelay;
     public GameObject rectangle;
+    public GameObject textCanvas;
+    public GameObject clue;
 
 
     void Update()
@@ -39,6 +41,21 @@ public class Shake : MonoBehaviour
         {
             // Shaking is done, activate the rectangle
             rectangle.SetActive(true);
+            if (!GameController.Instance.SceneVisited2 && textCanvas != null)
+            {
+                textCanvas.SetActive(true);
+
+            }
+            else if (GameController.Instance.SceneVisited2 && textCanvas != null)
+            {
+                // Scene has been visited, hide textCanvas
+                textCanvas.SetActive(false);
+
+                if (clue != null)
+                {
+                    clue.SetActive(true);
+                }
+            }
         }
     }
 
@@ -71,8 +88,23 @@ public class Shake : MonoBehaviour
         startY = transform.position.y;
         currentDelay = delayTimer;
         rectangle.SetActive(false);
+        if (clue != null)
+            clue.SetActive(false);
+        textCanvas.SetActive(false);
     }
+    public void HideText()
+    {
+        if (textCanvas != null)
+        {
+            textCanvas.SetActive(false);
+        }
+        GameController.Instance.SceneVisited2 = true;
 
+        if (clue != null)
+        {
+            clue.SetActive(true);
+        }
+    }
     // Update is called once per frame
 
 

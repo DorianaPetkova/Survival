@@ -605,7 +605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 514704164}
-  textCanvas: {fileID: 1628831740}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 1628831740}
   clue: {fileID: 965509918}
 --- !u!114 &514704166
 MonoBehaviour:
@@ -1766,7 +1767,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1628831741}
         m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
-        m_MethodName: HideText
+        m_MethodName: HideText1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2409,7 +2410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 514704164}
-  textCanvas: {fileID: 1628831740}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 1628831740}
   clue: {fileID: 965509918}
 --- !u!114 &1628831742
 MonoBehaviour:
@@ -2529,7 +2531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 514704164}
-  textCanvas: {fileID: 1628831740}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 1628831740}
   clue: {fileID: 965509918}
 --- !u!114 &1691768656
 MonoBehaviour:

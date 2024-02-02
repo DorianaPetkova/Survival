@@ -12,12 +12,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip gameFinishedSound;
     public AudioClip elevatormusic;
     public AudioClip ding;
+    public AudioClip fail;
+    public AudioClip win;
 
     private AudioSource audioSource;
     private AudioSource audioSourceE;
     private AudioSource audioDing;
+    private AudioSource audioSiren;
+    private AudioSource audiogameFinished;
     private bool el = false;
     public static bool quake { get; private set; } = false;
+    public static bool Squake { get; private set; } = false;
 
     void Start()
     {
@@ -38,34 +43,29 @@ public class AudioManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
             audioSourceE = gameObject.AddComponent<AudioSource>();
             audioDing = gameObject.AddComponent<AudioSource>();
+            audioSiren = gameObject.AddComponent<AudioSource>();
+            audiogameFinished = gameObject.AddComponent<AudioSource>();
 
 
             // Start playing the cute song throughout the game
             audioSource.clip = cuteSong;
             audioSourceE.clip = elevatormusic;
             audioDing.clip = ding;
-            audioSource.Play();
-
-
-
+            audioSiren.clip = sirensMusic;
+            audiogameFinished.clip = gameFinishedSound;
+            audiogameFinished.Play();
 
             // Subscribe to the scene loaded event
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
-        /*DontDestroyOnLoad(gameObject);
 
-        // Start playing the cute song throughout the game
-        PlayBackgroundMusic(cuteSong);
-
-        // Subscribe to the scene loaded event
-        SceneManager.sceneLoaded += OnSceneLoaded;*/
     }
     void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex == 10)
         {
             CheckKeyInput();
-            Debug.Log($"there should be a ding?");
+
         }
     }
 
@@ -74,11 +74,18 @@ public class AudioManager : MonoBehaviour
         // Check the scene number and trigger audio events accordingly
         switch (scene.buildIndex)
         {
+            case 0:
+                audioSource.Pause();
+                audiogameFinished.UnPause();
+                break;
+            case 1:
+                audiogameFinished.Pause();
+                audioSource.Play();
+                break;
             case 9:
                 // Assuming elevatorMusic is an AudioClip assigned in the Inspector
                 audioSourceE.Pause();
-                if (quake == false)
-                    audioSource.UnPause();
+                audioSource.UnPause();
 
 
                 break;
@@ -97,19 +104,35 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case 11:
-                audioSourceE.Stop();
+
                 // Scene 11: Unpause cute song
                 // Assuming elevatorMusic is an AudioClip assigned in the Inspector
                 audioSourceE.Pause();
-                audioSource.UnPause();
+                if (!Squake)
+                    audioSource.UnPause();
+                else
+                    audioSource.Stop();
                 break;
 
             case 12:
                 // Scene 12: Play earthquake music, then play sirens music
                 audioSource.Pause();
                 quake = true;
-                PlayOneShot(earthquakeMusic);
-                StartCoroutine(PlaySirensMusic());
+                if (!Squake)
+                {
+                    PlayOneShot(earthquakeMusic);
+                    Squake = true;
+                    Invoke("PlaySirensMusic", earthquakeMusic.length);
+                }
+                break;
+            case 27:
+                audioSiren.Pause();
+                PlayOneShot(fail);
+                audiogameFinished.UnPause();
+                break;
+            case 29:
+                PlayOneShot(win);
+                audiogameFinished.UnPause();
                 break;
         }
     }
@@ -127,13 +150,12 @@ public class AudioManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(audioClip, transform.position);
     }
 
-    IEnumerator PlaySirensMusic()
+    void PlaySirensMusic()
     {
-        // Wait for the earthquake music to finish
-        yield return new WaitForSeconds(earthquakeMusic.length);
+
 
         // Play sirens music
-        PlayBackgroundMusic(sirensMusic);
+        audioSiren.Play();
     }
     void CheckKeyInput()
     {

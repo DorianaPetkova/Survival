@@ -202,6 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 1375244811}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
+  clue: {fileID: 0}
 --- !u!114 &673718333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,6 +1544,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 1375244811}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
+  clue: {fileID: 0}
 --- !u!114 &1375244813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,7 +2277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuildIndex: 27
-  NextScene: 1
+  NextScene: 0
   isThirdDoor: 0
   CheckForEButton: 0
   sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}

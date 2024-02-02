@@ -7,7 +7,9 @@ public class mainMenu : MonoBehaviour
 {
     public GameObject popupCanvas;
     public GameObject textCanvas;
+    public GameObject textCanvas1;
     public GameObject clue;
+
 
     void Start()
     {
@@ -16,21 +18,34 @@ public class mainMenu : MonoBehaviour
 
         if (popupCanvas != null)
             popupCanvas.SetActive(false);
-        if (SceneManager.GetActiveScene().buildIndex == 12)
-            if (textCanvas != null)
-                textCanvas.SetActive(false);
 
         // Check if the scene has been visited before showing textCanvas
         if (!GameController.Instance.SceneVisited && textCanvas != null)
         {
             textCanvas.SetActive(true);
-            Debug.Log("textCanvas should be visible initially");
+
         }
         else if (GameController.Instance.SceneVisited && textCanvas != null)
         {
             // Scene has been visited, hide textCanvas
             textCanvas.SetActive(false);
-            Debug.Log("textCanvas should be hidden after HideText is called");
+
+            if (clue != null)
+            {
+                clue.SetActive(true);
+            }
+        }
+        if (!GameController.Instance.SceneVisited1 && textCanvas1 != null)
+        {
+            textCanvas1.SetActive(true);
+
+        }
+        else if (GameController.Instance.SceneVisited1 && textCanvas1 != null)
+        {
+            // Scene has been visited, hide textCanvas
+
+            textCanvas1.SetActive(false);
+
             if (clue != null)
             {
                 clue.SetActive(true);
@@ -38,19 +53,7 @@ public class mainMenu : MonoBehaviour
         }
 
     }
-    void Update()
-    {
-        // Check if the scene index is 12 and isShaking is true
-        if (SceneManager.GetActiveScene().buildIndex == 12 && Shake.isShaking && Shake.shakeTimeRemaining <= 0)
-        {
-            // Make textCanvas visible
-            if (textCanvas != null && !textCanvas.activeSelf)
-            {
-                textCanvas.SetActive(true);
-                Debug.Log("textCanvas should be visible");
-            }
-        }
-    }
+
 
     public void ShowPauseMenu()
     {
@@ -58,6 +61,10 @@ public class mainMenu : MonoBehaviour
         if (textCanvas != null)
         {
             textCanvas.SetActive(false);
+        }
+        if (textCanvas1 != null)
+        {
+            textCanvas1.SetActive(false);
         }
 
         // Show the popupCanvas
@@ -84,6 +91,7 @@ public class mainMenu : MonoBehaviour
             textCanvas.SetActive(false);
         }
 
+
         // Set the visited state using the GameController
         GameController.Instance.SceneVisited = true;
 
@@ -92,10 +100,22 @@ public class mainMenu : MonoBehaviour
             clue.SetActive(true);
         }
 
-        Debug.Log("HideText has been called, textCanvas is permanently hidden");
-
 
     }
+    public void HideText1()
+    {
+        if (textCanvas1 != null)
+        {
+            textCanvas1.SetActive(false);
+        }
+        GameController.Instance.SceneVisited1 = true;
+
+        if (clue != null)
+        {
+            clue.SetActive(true);
+        }
+    }
+
     public void ExitButton()
     {
         Application.Quit();

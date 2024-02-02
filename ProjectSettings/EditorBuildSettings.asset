@@ -95,4 +95,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Janitor's closet.unity
     guid: 950c732699fc8634d9d1074ce37c4122
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 0bce77c715247e040a4423f4f2656b2a
   m_configObjects: {}

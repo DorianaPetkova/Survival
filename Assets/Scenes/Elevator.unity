@@ -640,6 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 234927381}
   textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
   clue: {fileID: 1482445489}
 --- !u!114 &234927383
 MonoBehaviour:
@@ -2613,6 +2614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 234927381}
   textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
   clue: {fileID: 1482445489}
 --- !u!114 &1735093171
 MonoBehaviour:
@@ -3048,10 +3050,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuteSong: {fileID: 8300000, guid: 0623edcbd9f4f0a4c974658f7c248800, type: 3}
   earthquakeMusic: {fileID: 8300000, guid: 779a22f5cb2fde74980c29bd3d17792a, type: 3}
-  sirensMusic: {fileID: 8300000, guid: 0623edcbd9f4f0a4c974658f7c248800, type: 3}
-  gameFinishedSound: {fileID: 8300000, guid: e512d4a3ca7f30245bb1472acc24d55a, type: 3}
+  sirensMusic: {fileID: 8300000, guid: 0e8e6e950b4a3f041b7d5a4c2a1bf9ef, type: 3}
+  gameFinishedSound: {fileID: 8300000, guid: 271b91234faa9ec4799623161fff1615, type: 3}
   elevatormusic: {fileID: 8300000, guid: bdec8aac44814b94d9655fb74d52c8cf, type: 3}
   ding: {fileID: 8300000, guid: 6f9857ecc796b7742a19e1c7ff0f27db, type: 3}
+  fail: {fileID: 8300000, guid: b8ca547637db0404b8adc74420016a10, type: 3}
+  win: {fileID: 8300000, guid: e512d4a3ca7f30245bb1472acc24d55a, type: 3}
 --- !u!4 &1967752081
 Transform:
   m_ObjectHideFlags: 0
