@@ -11,8 +11,10 @@ public class mainMenu : MonoBehaviour
     public GameObject clue;
 
 
+
     void Start()
     {
+
         if (clue != null)
             clue.SetActive(false);
 
@@ -140,6 +142,8 @@ public class mainMenu : MonoBehaviour
         {
             popupCanvas.SetActive(false);
         }
+
+
     }
 
     public void StartButton()

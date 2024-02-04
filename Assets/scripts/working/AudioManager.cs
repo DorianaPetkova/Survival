@@ -16,13 +16,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip win;
 
     private AudioSource audioSource;
+
     private AudioSource audioSourceE;
     private AudioSource audioDing;
     private AudioSource audioSiren;
     private AudioSource audiogameFinished;
-    private bool el = false;
-    public static bool quake { get; private set; } = false;
-    public static bool Squake { get; private set; } = false;
+    public static bool el { get; set; } = false;
+    public static bool quake { get; set; } = false;
+    public static bool Squake { get; set; } = false;
 
     void Start()
     {
@@ -54,6 +55,16 @@ public class AudioManager : MonoBehaviour
             audioSiren.clip = sirensMusic;
             audiogameFinished.clip = gameFinishedSound;
             audiogameFinished.Play();
+
+            audioSource.volume = 0.5f;
+            audiogameFinished.volume = 0.5f;
+            audioSiren.volume = 0.5f;
+            audioSourceE.volume = 0.5f;
+
+            audioSource.loop = true;
+            audioSourceE.loop = true;
+            audioSiren.loop = true;
+            audiogameFinished.loop = true;
 
             // Subscribe to the scene loaded event
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -131,6 +142,7 @@ public class AudioManager : MonoBehaviour
                 audiogameFinished.UnPause();
                 break;
             case 29:
+                audioSiren.Pause();
                 PlayOneShot(win);
                 audiogameFinished.UnPause();
                 break;

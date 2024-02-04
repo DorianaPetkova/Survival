@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour
 {
     // Start is called before the first frame update
     private static GameController instance;
-
     public static GameController Instance
     {
         get
@@ -38,9 +37,9 @@ public class GameController : MonoBehaviour
     // Add any other variables or methods related to game state here
     public string selectedCharacter;
     public string selectedLevel;
-    private bool sceneVisited = false;
-    private bool sceneVisited1 = false;
-    private bool sceneVisited2 = false;
+    public static bool sceneVisited { get; set; } = false;
+    public static bool sceneVisited1 { get; set; } = false;
+    public static bool sceneVisited2 { get; set; } = false;
 
     public bool SceneVisited
     {

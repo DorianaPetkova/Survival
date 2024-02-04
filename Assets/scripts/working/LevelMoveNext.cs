@@ -85,7 +85,7 @@ public class LevelMoveNext : MonoBehaviour
             Debug.Log("third door?");
             if (sceneBuildIndex == 12)
             {
-                Vector3 startingPosition = thirdDoor.transform.position + new Vector3((offsetX - 10), -(offsetY + 70), 0f);
+                Vector3 startingPosition = thirdDoor.transform.position + new Vector3((offsetX + 20), -(offsetY + 70), 0f);
                 body.position = startingPosition;
             }
             else if (sceneBuildIndex == 14)

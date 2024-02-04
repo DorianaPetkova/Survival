@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ac7b9223c44fa48a76fbbccf28dcd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maleCharacter: {fileID: 0}
-  femaleCharacter: {fileID: 0}
+  maleCharacter: {fileID: 237077743}
+  femaleCharacter: {fileID: 1711464644}
 --- !u!4 &97174912
 Transform:
   m_ObjectHideFlags: 0
@@ -733,6 +733,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 678373722}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
+  clue: {fileID: 0}
 --- !u!114 &678373724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2588,6 +2591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 678373722}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
+  clue: {fileID: 0}
 --- !u!114 &2124249245
 MonoBehaviour:
   m_ObjectHideFlags: 0

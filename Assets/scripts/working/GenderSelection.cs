@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GenderSelection : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public void OnMaleButtonClicked()
     {
         GameController.Instance.selectedCharacter = "Male";
