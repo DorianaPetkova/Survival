@@ -670,7 +670,6 @@ MonoBehaviour:
   popupCanvas: {fileID: 0}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 0}
-  clue: {fileID: 0}
 --- !u!1 &991020218
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +775,7 @@ GameObject:
   - component: {fileID: 1056510656}
   - component: {fileID: 1056510655}
   - component: {fileID: 1056510654}
-  - component: {fileID: 1056510657}
+  - component: {fileID: 1056510658}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -827,7 +826,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1056510657
+--- !u!82 &1056510658
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -837,7 +836,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 271b91234faa9ec4799623161fff1615, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e512d4a3ca7f30245bb1472acc24d55a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

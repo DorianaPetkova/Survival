@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f402ca045cd942242ba1737856d078af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 7
+  sceneBuildIndex: 29
   NextScene: 0
   isThirdDoor: 1
   CheckForEButton: 0
@@ -519,6 +519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 449160215}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
 --- !u!114 &449160217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2112,6 +2114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 0}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
 --- !u!114 &1440506437
 MonoBehaviour:
   m_ObjectHideFlags: 0

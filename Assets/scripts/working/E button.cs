@@ -7,8 +7,12 @@ public class Ebutton : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public SpriteRenderer interactionSprite;
-    [SerializeField] public string sceneToLoad;
+
     public GameObject flashlight;
+    public GameObject textCanvas;
+
+    public static bool clue4 { get; set; } = false;
+
     public static bool gotit { get; set; } = false;
 
 
@@ -19,6 +23,9 @@ public class Ebutton : MonoBehaviour
         interactionSprite.enabled = false;
         if (flashlight != null)
             flashlight.SetActive(false);
+
+        if (textCanvas != null)
+            textCanvas.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -27,6 +34,18 @@ public class Ebutton : MonoBehaviour
         {
             interactionSprite.enabled = true;
         }
+    }
+    public void HideText()
+    {
+        if (textCanvas != null)
+        {
+            textCanvas.SetActive(false);
+            clue4 = true;
+
+        }
+        GameController.Instance.SceneVisited3 = true;
+
+
     }
 
 
@@ -40,19 +59,21 @@ public class Ebutton : MonoBehaviour
 
     private void Update()
     {
-        if (sceneToLoad == "Janitor's closet")
+        if (SceneManager.GetActiveScene().buildIndex == 28)
         {
-            if (interactionSprite.enabled && Input.GetKeyDown(KeyCode.E) && gotit)
+            if (interactionSprite.enabled && Input.GetKeyDown(KeyCode.E) && !gotit)
             {
                 if (flashlight != null)
                     flashlight.SetActive(true);
-                StartCoroutine(DisableFlashlightAfterDelay(2f));
+                StartCoroutine(DisableFlashlightAfterDelay(3f));
                 gotit = true;
+                StartCoroutine(ShowCanvasAfterDelay(3f));
             }
+
         }
         else if (interactionSprite.enabled && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(LevelMove.sceneBuildIndexPass);
         }
     }
     IEnumerator DisableFlashlightAfterDelay(float delay)
@@ -63,6 +84,16 @@ public class Ebutton : MonoBehaviour
         if (flashlight != null)
         {
             flashlight.SetActive(false);
+        }
+    }
+    IEnumerator ShowCanvasAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Disable the flashlight after waiting for 2 seconds
+        if (textCanvas != null)
+        {
+            textCanvas.SetActive(true);
         }
     }
 }

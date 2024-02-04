@@ -61,6 +61,7 @@ public class LevelMoveNext : MonoBehaviour
                 {
                     Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX + 70), +(offsetY + 200), 0f);
                     body.position = startingPosition;
+
                 }
                 else if (sceneBuildIndex == 13)
                 {
@@ -68,7 +69,14 @@ public class LevelMoveNext : MonoBehaviour
                     body.position = startingPosition;
 
                 }
-
+                else if (sceneBuildIndex == 28)
+                {
+                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX + 100), -(offsetY + 60), 0f);
+                    body.position = startingPosition;
+                    Debug.Log($"{body.position}");
+                    Debug.Log($"{thirdDoor.transform.position}");
+                    Debug.Log($"{offsetX + 50}");
+                }
                 else
                 {
                     Vector3 startingPosition = entrance.transform.position + new Vector3(offsetX, offsetY, 0f);
@@ -85,7 +93,7 @@ public class LevelMoveNext : MonoBehaviour
             Debug.Log("third door?");
             if (sceneBuildIndex == 12)
             {
-                Vector3 startingPosition = thirdDoor.transform.position + new Vector3((offsetX + 20), -(offsetY + 70), 0f);
+                Vector3 startingPosition = thirdDoor.transform.position + new Vector3((offsetX + 10), -(offsetY + 70), 0f);
                 body.position = startingPosition;
             }
             else if (sceneBuildIndex == 14)

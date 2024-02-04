@@ -118,11 +118,23 @@ public class Timer : MonoBehaviour
         {
             Flash();
         }
-        if (SceneManager.GetActiveScene().buildIndex == 29 && SceneManager.GetActiveScene().buildIndex == 27)
+        if (SceneManager.GetActiveScene().buildIndex == 29)
         {
             CheckAndActivateStars();
             Debug.Log("checked");
             StopTimer();
+            mainMenu.clue1 = false;
+            mainMenu.clue2 = false;
+            Ebutton.clue4 = false;
+            Shake.clue3 = false;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 27)
+        {
+            StopTimer();
+            mainMenu.clue1 = false;
+            mainMenu.clue2 = false;
+            Ebutton.clue4 = false;
+            Shake.clue3 = false;
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -137,7 +149,9 @@ public class Timer : MonoBehaviour
             GameController.sceneVisited = false;
             GameController.sceneVisited1 = false;
             GameController.sceneVisited2 = false;
+            GameController.sceneVisited3 = false;
             Ebutton.gotit = false;
+
         }
     }
     public void ResetTimer()

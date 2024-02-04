@@ -8,15 +8,14 @@ public class mainMenu : MonoBehaviour
     public GameObject popupCanvas;
     public GameObject textCanvas;
     public GameObject textCanvas1;
-    public GameObject clue;
-
+    public static bool clue1 { get; set; } = false;
+    public static bool clue2 { get; set; } = false;
 
 
     void Start()
     {
 
-        if (clue != null)
-            clue.SetActive(false);
+
 
         if (popupCanvas != null)
             popupCanvas.SetActive(false);
@@ -32,10 +31,7 @@ public class mainMenu : MonoBehaviour
             // Scene has been visited, hide textCanvas
             textCanvas.SetActive(false);
 
-            if (clue != null)
-            {
-                clue.SetActive(true);
-            }
+
         }
         if (!GameController.Instance.SceneVisited1 && textCanvas1 != null)
         {
@@ -48,10 +44,7 @@ public class mainMenu : MonoBehaviour
 
             textCanvas1.SetActive(false);
 
-            if (clue != null)
-            {
-                clue.SetActive(true);
-            }
+
         }
 
     }
@@ -91,16 +84,15 @@ public class mainMenu : MonoBehaviour
         if (textCanvas != null)
         {
             textCanvas.SetActive(false);
+            clue1 = true;
+
         }
 
 
         // Set the visited state using the GameController
         GameController.Instance.SceneVisited = true;
 
-        if (clue != null)
-        {
-            clue.SetActive(true);
-        }
+
 
 
     }
@@ -109,13 +101,11 @@ public class mainMenu : MonoBehaviour
         if (textCanvas1 != null)
         {
             textCanvas1.SetActive(false);
+            clue2 = true;
+
         }
         GameController.Instance.SceneVisited1 = true;
 
-        if (clue != null)
-        {
-            clue.SetActive(true);
-        }
     }
 
     public void ExitButton()

@@ -31,8 +31,8 @@ public class GameController : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-
     }
+
 
     // Add any other variables or methods related to game state here
     public string selectedCharacter;
@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     public static bool sceneVisited { get; set; } = false;
     public static bool sceneVisited1 { get; set; } = false;
     public static bool sceneVisited2 { get; set; } = false;
+    public static bool sceneVisited3 { get; set; } = false;
 
     public bool SceneVisited
     {
@@ -55,6 +56,11 @@ public class GameController : MonoBehaviour
     {
         get { return sceneVisited2; }
         set { sceneVisited2 = value; }
+    }
+    public bool SceneVisited3
+    {
+        get { return sceneVisited3; }
+        set { sceneVisited3 = value; }
     }
 
 }

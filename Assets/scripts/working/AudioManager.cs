@@ -21,6 +21,9 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioDing;
     private AudioSource audioSiren;
     private AudioSource audiogameFinished;
+    private AudioSource audioWin;
+    private AudioSource audioFail;
+
     public static bool el { get; set; } = false;
     public static bool quake { get; set; } = false;
     public static bool Squake { get; set; } = false;
@@ -46,12 +49,17 @@ public class AudioManager : MonoBehaviour
             audioDing = gameObject.AddComponent<AudioSource>();
             audioSiren = gameObject.AddComponent<AudioSource>();
             audiogameFinished = gameObject.AddComponent<AudioSource>();
+            audioWin = gameObject.AddComponent<AudioSource>();
+            audioFail = gameObject.AddComponent<AudioSource>();
 
 
             // Start playing the cute song throughout the game
             audioSource.clip = cuteSong;
             audioSourceE.clip = elevatormusic;
             audioDing.clip = ding;
+            audioFail.clip = fail;
+            audioWin.clip = win;
+
             audioSiren.clip = sirensMusic;
             audiogameFinished.clip = gameFinishedSound;
             audiogameFinished.Play();
@@ -138,14 +146,24 @@ public class AudioManager : MonoBehaviour
                 break;
             case 27:
                 audioSiren.Pause();
-                PlayOneShot(fail);
+
+                audioFail.Play();
+                Debug.Log("fail");
                 audiogameFinished.UnPause();
+                break;
+            case 28:
+                if (Ebutton.gotit)
+                    audioWin.Play();
+                Debug.Log("win");
+
                 break;
             case 29:
                 audioSiren.Pause();
-                PlayOneShot(win);
+                audioWin.Play();
                 audiogameFinished.UnPause();
+                Debug.Log("win");
                 break;
+
         }
     }
 
