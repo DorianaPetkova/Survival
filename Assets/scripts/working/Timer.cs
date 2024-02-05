@@ -131,6 +131,8 @@ public class Timer : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 27)
         {
             StopTimer();
+            ResetTimer();
+            HideStars();
             mainMenu.clue1 = false;
             mainMenu.clue2 = false;
             Ebutton.clue4 = false;
@@ -140,24 +142,24 @@ public class Timer : MonoBehaviour
         {
             ResetTimer();
             HideStars();
-            startedCounting = false;
-            rectangle.SetActive(false);
-            Shake.isShaking = false;
-            AudioManager.quake = false;
-            AudioManager.Squake = false;
-            AudioManager.el = false;
-            GameController.sceneVisited = false;
-            GameController.sceneVisited1 = false;
-            GameController.sceneVisited2 = false;
-            GameController.sceneVisited3 = false;
-            Ebutton.gotit = false;
-
         }
     }
     public void ResetTimer()
     {
         timer = 0;
         SetTextDisplay(false);
+        startedCounting = false;
+        rectangle.SetActive(false);
+        Shake.isShaking = false;
+        AudioManager.quake = false;
+        AudioManager.Squake = false;
+        AudioManager.el = false;
+        GameController.sceneVisited = false;
+        GameController.sceneVisited1 = false;
+        GameController.sceneVisited2 = false;
+        GameController.sceneVisited3 = false;
+        Ebutton.gotit = false;
+
     }
     private void UpdateTimerDisplay(float time)
     {

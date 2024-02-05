@@ -71,6 +71,7 @@ public class LevelMove : MonoBehaviour
             }
         }
 
+
         // Check if the player is inside the trigger, sprite is enabled, and pressed 'E'.
     }
 
