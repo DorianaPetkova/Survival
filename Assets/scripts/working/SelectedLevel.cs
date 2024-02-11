@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectedLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // for activating the right colliders
     public void OnEarthquakeButtonClicked()
     {
         GameController.Instance.selectedLevel = "Earthquake";

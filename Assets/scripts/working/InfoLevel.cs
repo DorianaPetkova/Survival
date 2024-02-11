@@ -9,18 +9,16 @@ public class InfoLevel : MonoBehaviour
     public GameObject ColliderLevelF;
     private void Start()
     {
+        //disabling colliders based on chosen level
         string selectedLevel = GameController.Instance.selectedLevel;
 
         if (selectedLevel == "Earthquake")
         {
-
             ColliderLevelE.SetActive(true);
             ColliderLevelF.SetActive(false);
         }
-
         if (selectedLevel == "FireHazzard")
         {
-
             ColliderLevelE.SetActive(false);
             ColliderLevelF.SetActive(true);
         }

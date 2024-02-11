@@ -1,44 +1,75 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class Shake : MonoBehaviour
 {
-    public static float shakeTimeRemaining = 11;
+
+    private static Shake instance;
+
+    // making sure only one instance exists
+    public static Shake Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Shake>();
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(Shake).Name;
+                    instance = obj.AddComponent<Shake>();
+                }
+            }
+            return instance;
+        }
+    }
+
+
     private float shakePower;
     private float shakeFadeTime;
     private float shakeRotation;
-    public float rotationMultiplier = 7;
+    public static float shakeTimeRemaining = 11;
+    public static bool shook { get; set; } = false;
+    private float rotationMultiplier = 7;
     public static bool isShaking { get; set; } = false;
     public static bool clue3 { get; set; } = false;
-    private float delayTimer = 2f; // Delay before starting the shake
+    // Delay before starting the shake
+    private float delayTimer = 2f;
     private float currentDelay;
-
     public GameObject textCanvas;
+    private float startY;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        startY = transform.position.y;
+        currentDelay = delayTimer;
+        if (textCanvas != null)
+            textCanvas.SetActive(false);
+    }
     void Update()
     {
-
         if (currentDelay > 0)
         {
             currentDelay -= Time.deltaTime;
         }
         else
         {
-            // If the delay is over, and AudioManager.quake is true, start shaking
+            // start shaking
             if (AudioManager.quake && !isShaking)
             {
                 StartShake(11f, 1f);
-                isShaking = true;// Set the flag to true when shaking starts
+                isShaking = true;
 
             }
 
         }
         if (isShaking && shakeTimeRemaining <= 0)
         {
-            // Shaking is done, activate the rectangle
+            // shaking done, activate the rectangle
 
             if (!GameController.Instance.SceneVisited2 && textCanvas != null)
             {
@@ -47,55 +78,63 @@ public class Shake : MonoBehaviour
             }
             else if (GameController.Instance.SceneVisited2 && textCanvas != null)
             {
-                // Scene has been visited, hide textCanvas
                 textCanvas.SetActive(false);
-
             }
         }
     }
-
     private void LateUpdate()
     {
-        if (shakeTimeRemaining > 0)
+        if (shook && shakeTimeRemaining > 0)
         {
-            shakeTimeRemaining = Mathf.Max(0f, shakeTimeRemaining - Time.deltaTime);
+            shakeTimeRemaining -= Time.deltaTime;
             float x = Random.Range(-1f, 1f) * shakePower;
             float y = Random.Range(-1f, 1f) * shakePower;
             transform.position += new Vector3(x, y, 0f);
             shakePower = Mathf.MoveTowards(shakePower, 0f, shakeFadeTime * Time.deltaTime);
             shakeRotation = Mathf.MoveTowards(shakeRotation, 0f, shakeFadeTime * rotationMultiplier * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0f, 0f, shakeRotation * Random.Range(-1f, 1f));
         }
-        transform.rotation = Quaternion.Euler(0f, 0f, shakeRotation * Random.Range(-1f, 1f));
     }
+
+    // start the shake
     public void StartShake(float length, float power)
     {
-        shakeTimeRemaining = length;
-        shakePower = power;
-        shakeFadeTime = power / length;
-        shakeRotation = power * rotationMultiplier;
+        if (!shook)
+        {
+            shakeTimeRemaining = length;
+            shakePower = power;
+            shakeFadeTime = power / length;
+            shakeRotation = power * rotationMultiplier;
+            shook = true;
+
+        }
     }
 
-    private float startY;
 
-    // Start is called before the first frame update
-    void Start()
+    public void StopShake()
     {
-        startY = transform.position.y;
-        currentDelay = delayTimer;
-        textCanvas.SetActive(false);
+        shook = false;
+
+    }
+    public void ResumeShake()
+    {
+        if (!shook)
+        {
+            shook = true;
+
+        }
     }
     public void HideText()
     {
         if (textCanvas != null)
         {
+            Debug.Log("clue3 before hiding text: " + clue3);
             textCanvas.SetActive(false);
             clue3 = true;
+            Debug.Log(clue3);
+            Debug.Log("clue3 after hiding text: " + clue3);
 
         }
         GameController.Instance.SceneVisited2 = true;
     }
-    // Update is called once per frame
-
-
-
 }

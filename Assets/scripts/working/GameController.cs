@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     private static GameController instance;
     public static GameController Instance
     {
@@ -18,8 +18,6 @@ public class GameController : MonoBehaviour
             return instance;
         }
     }
-
-
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -33,15 +31,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-
-    // Add any other variables or methods related to game state here
-    public string selectedCharacter;
+    //making sure if gender isnt selected, default is male
+    public string selectedCharacter = "Male";
     public string selectedLevel;
     public static bool sceneVisited { get; set; } = false;
     public static bool sceneVisited1 { get; set; } = false;
     public static bool sceneVisited2 { get; set; } = false;
     public static bool sceneVisited3 { get; set; } = false;
-
+    //checks if scene has been visited
     public bool SceneVisited
     {
         get { return sceneVisited; }
@@ -62,5 +59,4 @@ public class GameController : MonoBehaviour
         get { return sceneVisited3; }
         set { sceneVisited3 = value; }
     }
-
 }

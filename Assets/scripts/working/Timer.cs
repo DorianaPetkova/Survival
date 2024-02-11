@@ -10,7 +10,8 @@ public class Timer : MonoBehaviour
 
     private float timer;
     public GameObject rectangle;
-    private bool startedCounting = false;
+    public static bool startedCounting { get; set; } = false;
+
     [SerializeField] private TextMeshProUGUI firstMinute;
     [SerializeField] private TextMeshProUGUI secondMinute;
     [SerializeField] private TextMeshProUGUI separator;
@@ -21,15 +22,15 @@ public class Timer : MonoBehaviour
     public GameObject star3;
     private float flashTimer;
     private float flashDuration = 1f;
-    // Start is called before the first frame update
+
 
     private static Timer instance;
     void Start()
     {
         rectangle.SetActive(false);
+
         if (instance != null && instance != this)
         {
-            // Destroy this new instance, as there can only be one
             Destroy(gameObject);
             return;
         }
@@ -37,10 +38,7 @@ public class Timer : MonoBehaviour
         star2.SetActive(false);
         star3.SetActive(false);
 
-        // Set this instance as the singleton
         instance = this;
-
-        // Make sure this instance persists between scenes
         DontDestroyOnLoad(gameObject);
         if (startedCounting == true)
             SetTextDisplay(true);
@@ -52,7 +50,7 @@ public class Timer : MonoBehaviour
     {
         float currentTime = timer;
 
-        // Check and activate stars based on current time
+        // activate stars based on time
         if (currentTime < 60f)
         {
             star1.SetActive(true);
@@ -76,7 +74,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            // Time is above 180 seconds, deactivate all stars
+            //over 3 minutes no stars
             star1.SetActive(false);
             star2.SetActive(false);
             star3.SetActive(false);
@@ -98,15 +96,19 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Shake.isShaking && Shake.shakeTimeRemaining <= 0 && !startedCounting)
         {
-            Debug.Log($"{Shake.isShaking}");
-            Debug.Log($"{Shake.shakeTimeRemaining}");
-            Debug.Log($"{startedCounting}");
+
+
             SetTextDisplay(true);
-            startedCounting = true;
+            if (!mainMenu.count)
+            {
+                startedCounting = true;
+
+            }
+
             rectangle.SetActive(true);
+
         }
 
         if (startedCounting && timer < timeDuration)
@@ -121,14 +123,14 @@ public class Timer : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 29)
         {
             CheckAndActivateStars();
-            Debug.Log("checked");
+
             StopTimer();
             mainMenu.clue1 = false;
             mainMenu.clue2 = false;
             Ebutton.clue4 = false;
             Shake.clue3 = false;
         }
-        if (SceneManager.GetActiveScene().buildIndex == 27)
+        if (SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26)
         {
             StopTimer();
             ResetTimer();
@@ -138,11 +140,7 @@ public class Timer : MonoBehaviour
             Ebutton.clue4 = false;
             Shake.clue3 = false;
         }
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            ResetTimer();
-            HideStars();
-        }
+
     }
     public void ResetTimer()
     {
@@ -159,6 +157,7 @@ public class Timer : MonoBehaviour
         GameController.sceneVisited2 = false;
         GameController.sceneVisited3 = false;
         Ebutton.gotit = false;
+
 
     }
     private void UpdateTimerDisplay(float time)
