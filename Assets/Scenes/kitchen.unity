@@ -447,7 +447,7 @@ SpriteRenderer:
   m_Size: {x: 0.9, y: 1.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &125958993
@@ -914,10 +914,6 @@ GameObject:
   - component: {fileID: 691296189}
   - component: {fileID: 691296188}
   - component: {fileID: 691296187}
-  - component: {fileID: 691296186}
-  - component: {fileID: 691296194}
-  - component: {fileID: 691296195}
-  - component: {fileID: 691296196}
   m_Layer: 5
   m_Name: alice
   m_TagString: Player
@@ -925,24 +921,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &691296186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691296185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16311436402d3fa46a0aa9af3047778a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entrance: {fileID: 0}
-  exit: {fileID: 0}
-  thirdDoor: {fileID: 0}
-  sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
-  offsetX: 90
-  offsetY: 60
 --- !u!61 &691296187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1151,53 +1129,6 @@ RectTransform:
   m_AnchoredPosition: {x: 806.1, y: 131.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &691296194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691296185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51357c407151c5b40a588424985986ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textfire: {fileID: 0}
-  textwater: {fileID: 0}
-  textstove: {fileID: 0}
-  spriteFire: {fileID: 0}
-  spriteTowel: {fileID: 0}
-  colliderTowel: {fileID: 0}
-  colliderWater: {fileID: 0}
-  colliderStove: {fileID: 0}
---- !u!114 &691296195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691296185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467f536be58babe4aaa3c521bc77273c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionSprite: {fileID: 0}
---- !u!114 &691296196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691296185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb04c966941f4448a3052d5506daeb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textwater: {fileID: 0}
-  colliderWater: {fileID: 1923962052}
 --- !u!1 &836617707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,8 +2257,6 @@ GameObject:
   - component: {fileID: 1797948157}
   - component: {fileID: 1797948156}
   - component: {fileID: 1797948155}
-  - component: {fileID: 1797948163}
-  - component: {fileID: 1797948164}
   m_Layer: 5
   m_Name: alex
   m_TagString: Player
@@ -2561,33 +2490,6 @@ RectTransform:
   m_AnchoredPosition: {x: 676, y: 133}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1797948163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797948154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467f536be58babe4aaa3c521bc77273c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionSprite: {fileID: 63683303}
---- !u!114 &1797948164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797948154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb04c966941f4448a3052d5506daeb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textwater: {fileID: 0}
-  colliderWater: {fileID: 1895652066}
 --- !u!1 &1823992905
 GameObject:
   m_ObjectHideFlags: 0
