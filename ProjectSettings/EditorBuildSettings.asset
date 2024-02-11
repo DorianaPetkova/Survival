@@ -98,4 +98,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 0bce77c715247e040a4423f4f2656b2a
+  - enabled: 1
+    path: Assets/Scenes/restaurant.unity
+    guid: d360667b9d609a54e9ed8b935fbdfb08
+  - enabled: 1
+    path: Assets/Scenes/kitchen.unity
+    guid: ddca7a2871a8eba44a2597bab2e0c9d7
+  - enabled: 1
+    path: Assets/Scenes/kitchen 2.unity
+    guid: ff46e9473abeb26499f2081fbd232f54
+  - enabled: 1
+    path: Assets/Scenes/Kitchen 3.unity
+    guid: a6f4e2f02c7d078408477da27f5a3e79
   m_configObjects: {}
