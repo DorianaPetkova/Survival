@@ -1560,7 +1560,6 @@ MonoBehaviour:
   interactionSprite: {fileID: 166653688}
   flashlight: {fileID: 0}
   textCanvas: {fileID: 0}
-  clue: {fileID: 0}
 --- !u!61 &539602231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1930,6 +1929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020166144}
   - component: {fileID: 1020166143}
+  - component: {fileID: 1020166145}
   - component: {fileID: 1020166142}
   m_Layer: 0
   m_Name: collider restaurant
@@ -1953,7 +1953,6 @@ MonoBehaviour:
   interactionSprite: {fileID: 223750249}
   flashlight: {fileID: 0}
   textCanvas: {fileID: 0}
-  clue: {fileID: 0}
 --- !u!61 &1020166143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2008,13 +2007,31 @@ Transform:
   m_GameObject: {fileID: 1020166141}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 541, y: 200, z: -1.3350128}
+  m_LocalPosition: {x: 626, y: 141, z: -1.3350128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 223750250}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1020166145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020166141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f402ca045cd942242ba1737856d078af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneBuildIndex: 30
+  NextScene: 0
+  isThirdDoor: 1
+  CheckForEButton: 1
+  sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
+  interactionSprite: {fileID: 223750249}
 --- !u!1 &1023290540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,7 +3201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrance: {fileID: 1153448738}
   exit: {fileID: 488930050}
-  thirdDoor: {fileID: 0}
+  thirdDoor: {fileID: 1020166141}
   sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
   offsetX: 90
   offsetY: 60
@@ -3864,7 +3881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrance: {fileID: 1153448738}
   exit: {fileID: 488930050}
-  thirdDoor: {fileID: 0}
+  thirdDoor: {fileID: 1020166141}
   sceneinfo: {fileID: 11400000, guid: 9625838f1619e084d832a4e622c92752, type: 2}
   offsetX: 90
   offsetY: 60

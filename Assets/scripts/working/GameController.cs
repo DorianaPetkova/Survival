@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
     public static bool sceneVisited1 { get; set; } = false;
     public static bool sceneVisited2 { get; set; } = false;
     public static bool sceneVisited3 { get; set; } = false;
+    public static bool sceneVisited4 { get; set; } = false;
 
     public bool SceneVisited
     {
@@ -61,6 +62,11 @@ public class GameController : MonoBehaviour
     {
         get { return sceneVisited3; }
         set { sceneVisited3 = value; }
+    }
+    public bool SceneVisited4
+    {
+        get { return sceneVisited4; }
+        set { sceneVisited4 = value; }
     }
 
 }

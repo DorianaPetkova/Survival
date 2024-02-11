@@ -107,6 +107,7 @@ public class mainMenu : MonoBehaviour
         GameController.Instance.SceneVisited1 = true;
 
     }
+   
 
     public void ExitButton()
     {

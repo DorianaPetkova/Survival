@@ -77,6 +77,15 @@ public class LevelMoveNext : MonoBehaviour
                     Debug.Log($"{thirdDoor.transform.position}");
                     Debug.Log($"{offsetX + 50}");
                 }
+                
+                else if (sceneBuildIndex == 31)
+                {
+                    Vector3 startingPosition = entrance.transform.position - new Vector3((offsetX +40), (offsetY + 65), 0f);
+                    body.position = startingPosition;
+                    Debug.Log($"{body.position}");
+                    Debug.Log($"{thirdDoor.transform.position}");
+                    Debug.Log($"{offsetX + 50}");
+                }
                 else
                 {
                     Vector3 startingPosition = entrance.transform.position + new Vector3(offsetX, offsetY, 0f);
@@ -107,6 +116,13 @@ public class LevelMoveNext : MonoBehaviour
                 Vector3 startingPosition = exit.transform.position - new Vector3((offsetX), (offsetY - 50), 0f);
                 body.position = startingPosition;
                 Debug.Log($"exit: {exit.transform.position}");
+                Debug.Log($"position: {body.position}");
+            }
+            else if (sceneBuildIndex == 30)
+            {
+                Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX-60), (offsetY +120), 0f);
+                body.position = startingPosition;
+                Debug.Log($"entrance: {entrance.transform.position}");
                 Debug.Log($"position: {body.position}");
             }
         }
@@ -171,6 +187,14 @@ public class LevelMoveNext : MonoBehaviour
                     Vector3 startingPosition = exit.transform.position + new Vector3((offsetX), -(offsetY + 50), 0f);
                     body.position = startingPosition;
                 }
+                else if (sceneBuildIndex == 30)
+                {
+                    Vector3 startingPosition = exit.transform.position - new Vector3((offsetX -50), -(offsetY + 40), 0f);
+                    body.position = startingPosition;
+                    
+                    
+                }
+
                 else
                 {
                     Vector3 startingPosition = exit.transform.position - new Vector3(offsetX, -offsetY, 0f);
