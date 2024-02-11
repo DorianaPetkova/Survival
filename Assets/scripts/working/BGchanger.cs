@@ -5,28 +5,15 @@ using UnityEngine.UI;
 
 public class BGchanger : MonoBehaviour
 {
-    /*public Sprite[] sprites;
-    public Image img;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        int random = Random.Range(0, sprites.Length);
-        img.sprite = sprites[random];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
-    public Sprite[] backgrounds; // Add your background sprites to this array
-    public Image backgroundImage; // Reference to the Image component of the background
+    //array for background sprites
+    public Sprite[] backgrounds;
+    public Image backgroundImage;
     public float time;
 
     void Start()
     {
-        InvokeRepeating("ChangeBackground", 0f, time); // Change background every 10 seconds
+        //changing background
+        InvokeRepeating("ChangeBackground", 0f, time);
     }
 
     void ChangeBackground()

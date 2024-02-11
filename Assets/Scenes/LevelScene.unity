@@ -680,7 +680,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1182079140}
   - component: {fileID: 1182079139}
-  - component: {fileID: 1182079138}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -688,14 +687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1182079138
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182079137}
-  m_Enabled: 1
 --- !u!20 &1182079139
 Camera:
   m_ObjectHideFlags: 0
@@ -731,7 +722,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 235.74512
+  orthographic size: 232.11298
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -756,7 +747,7 @@ Transform:
   m_GameObject: {fileID: 1182079137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 386, y: 235, z: -10}
+  m_LocalPosition: {x: 372, y: 232, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1269,6 +1260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fdffbf237eb7640821d2a7f0fee0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupCanvas: {fileID: 0}
+  textCanvas: {fileID: 0}
+  textCanvas1: {fileID: 0}
 --- !u!114 &2056399235
 MonoBehaviour:
   m_ObjectHideFlags: 0

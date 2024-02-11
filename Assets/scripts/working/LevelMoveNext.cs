@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelMoveNext : MonoBehaviour
 {
@@ -10,137 +11,100 @@ public class LevelMoveNext : MonoBehaviour
     public GameObject thirdDoor;
     [SerializeField] public SceneInfo sceneinfo;
     public float offsetX = 0f; public float offsetY = 0f;
-
-
     private Rigidbody2D body;
     void Awake()
     {
         body = gameObject.GetComponent<Rigidbody2D>();
     }
+    void Update()
+    {
+        if (!mainMenu.clue1 && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+
+            body.position = new Vector3(-114f, 25f, 0f);
+            Debug.Log("should work");
+        }
+    }
     void Start()
     {
+
         int sceneBuildIndex = LevelMove.sceneBuildIndexPass;
+        int previousSceneBuildIndex = LevelMove.sceneBuildIndexPass;
+        int currentSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (sceneinfo.NextScene) // Coming from entrance
+        // Check if the previous scene was the level scene and the current scene is city scene 1
+        if (previousSceneBuildIndex == 26 && currentSceneBuildIndex == 1)
         {
-            if (entrance != null)
-            {
-                if (sceneBuildIndex == 7)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 55), (offsetY + 125), 0f);
-                    body.position = startingPosition;
-                }
-                else if (sceneBuildIndex == 8)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX + 40), (offsetY + 40), 0f);
-                    body.position = startingPosition;
-                }
-                else if (sceneBuildIndex == 10 || sceneBuildIndex == 9)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 30), +(offsetY + 205), 0f);
-                    body.position = startingPosition;
-
-                }
-                else if (sceneBuildIndex == 11)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((-offsetX), +(offsetY + 40), 0f);
-                    body.position = startingPosition;
-                }
-                else if (sceneBuildIndex == 15 || sceneBuildIndex == 16 || sceneBuildIndex == 18 || sceneBuildIndex == 20 || sceneBuildIndex == 22)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 75), -(offsetY + 40), 0f);
-                    body.position = startingPosition;
-
-                }
-                else if (sceneBuildIndex == 14 || sceneBuildIndex == 17 || sceneBuildIndex == 19 || sceneBuildIndex == 21 || sceneBuildIndex == 23)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 60), -(offsetY + 30), 0f);
-                    body.position = startingPosition;
-                }
-                else if (sceneBuildIndex == 12)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX + 70), +(offsetY + 200), 0f);
-                    body.position = startingPosition;
-
-                }
-                else if (sceneBuildIndex == 13)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX - 40), (offsetY + 135), 0f);
-                    body.position = startingPosition;
-
-                }
-                else if (sceneBuildIndex == 28)
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX + 100), -(offsetY + 60), 0f);
-                    body.position = startingPosition;
-                    Debug.Log($"{body.position}");
-                    Debug.Log($"{thirdDoor.transform.position}");
-                    Debug.Log($"{offsetX + 50}");
-                }
-                
-                else if (sceneBuildIndex == 31)
-                {
-                    Vector3 startingPosition = entrance.transform.position - new Vector3((offsetX +40), (offsetY + 65), 0f);
-                    body.position = startingPosition;
-                    Debug.Log($"{body.position}");
-                    Debug.Log($"{thirdDoor.transform.position}");
-                    Debug.Log($"{offsetX + 50}");
-                }
-                else
-                {
-                    Vector3 startingPosition = entrance.transform.position + new Vector3(offsetX, offsetY, 0f);
-                    body.position = startingPosition;
-                    Debug.Log($"ON THE LEFT SIDE");
-
-
-                }
-                //Debug.Log($"wrong exit: {body.position}");
-            }
+            // Set specific coordinates for city scene 1
+            Vector3 startingPosition = new Vector3(-114f, 25f, 0f);
+            body.position = startingPosition;
+            Debug.Log($" CHECK FIRST SCENE{body.position}");
         }
-        else if (sceneinfo.isThirdDoor) // Coming from the third door
+        else
         {
-            Debug.Log("third door?");
-            if (sceneBuildIndex == 12)
+            // Coming from entrance
+            if (sceneinfo.NextScene)
             {
-                Vector3 startingPosition = thirdDoor.transform.position + new Vector3((offsetX + 10), -(offsetY + 70), 0f);
-                body.position = startingPosition;
-            }
-            else if (sceneBuildIndex == 14)
-            {
-                Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 30), -(offsetY + 80), 0f);
-                body.position = startingPosition;
-            }
-            else if (sceneBuildIndex == 7)
-            {
-
-                Vector3 startingPosition = exit.transform.position - new Vector3((offsetX), (offsetY - 50), 0f);
-                body.position = startingPosition;
-                Debug.Log($"exit: {exit.transform.position}");
-                Debug.Log($"position: {body.position}");
-            }
-            else if (sceneBuildIndex == 30)
-            {
-                Vector3 startingPosition = entrance.transform.position + new Vector3((offsetX-60), (offsetY +120), 0f);
-                body.position = startingPosition;
-                Debug.Log($"entrance: {entrance.transform.position}");
-                Debug.Log($"position: {body.position}");
-            }
-        }
-
-        else // Coming from exit
-        {
-            if (exit != null)
-            {
-
-                //Debug.Log($"{LevelMove.sceneBuildIndexPass}");
-                if (sceneBuildIndex == 5)
+                if (entrance != null)
                 {
-                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 70), (offsetY - 155), 0f);
+                    Vector3 startingPosition = entrance.transform.position;
+                    switch (sceneBuildIndex)
+                    {
+                        case 7:
+                            startingPosition += new Vector3((offsetX - 55), (offsetY + 125), 0f);
+                            break;
+                        case 8:
+                            startingPosition += new Vector3((offsetX + 40), (offsetY + 40), 0f);
+                            break;
+                        case 9:
+                        case 10:
+                            startingPosition += new Vector3((offsetX - 30), +(offsetY + 205), 0f);
+                            break;
+                        case 11:
+                            startingPosition += new Vector3((-offsetX), +(offsetY + 40), 0f);
+                            break;
+                        case 15:
+                        case 16:
+                        case 18:
+                        case 20:
+                        case 22:
+                            startingPosition += new Vector3((offsetX - 75), -(offsetY + 40), 0f);
+                            break;
+                        case 14:
+                        case 17:
+                        case 19:
+                        case 21:
+                        case 23:
+                            startingPosition += new Vector3((offsetX - 60), -(offsetY + 30), 0f);
+                            break;
+                        case 12:
+                            startingPosition += new Vector3((offsetX + 70), +(offsetY + 200), 0f);
+                            break;
+                        case 13:
+                            startingPosition += new Vector3((offsetX - 40), (offsetY + 135), 0f);
+                            break;
+                        case 28:
+                            startingPosition += new Vector3((offsetX + 100), -(offsetY + 60), 0f);
+                            break;
+
+                        default:
+                            startingPosition += new Vector3(offsetX, offsetY, 0f);
+                            Debug.Log("the other default");
+                            break;
+                    }
                     body.position = startingPosition;
                 }
-                else if (sceneBuildIndex == 6)
+            }
+            else if (sceneinfo.isThirdDoor)
+            {
+                if (sceneBuildIndex == 12)
                 {
-                    Vector3 startingPosition = exit.transform.position - new Vector3((offsetX - 80), (offsetY + 30), 0f);
+                    Vector3 startingPosition = thirdDoor.transform.position + new Vector3((offsetX + 10), -(offsetY + 70), 0f);
+                    body.position = startingPosition;
+                }
+                else if (sceneBuildIndex == 14)
+                {
+                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 30), -(offsetY + 80), 0f);
                     body.position = startingPosition;
                 }
                 else if (sceneBuildIndex == 7)
@@ -148,59 +112,57 @@ public class LevelMoveNext : MonoBehaviour
                     Vector3 startingPosition = exit.transform.position - new Vector3((offsetX), (offsetY - 50), 0f);
                     body.position = startingPosition;
                 }
-                else if (sceneBuildIndex == 8)
+            }
+            else
+            {
+                if (exit != null)
                 {
-                    Vector3 startingPosition = exit.transform.position - new Vector3((offsetX + 10), -(offsetY + 40), 0f);
+                    Vector3 startingPosition = exit.transform.position;
+                    switch (sceneBuildIndex)
+                    {
+                        case 5:
+                            startingPosition += new Vector3((offsetX - 70), (offsetY - 155), 0f);
+                            break;
+                        case 6:
+                            startingPosition -= new Vector3((offsetX - 80), (offsetY + 30), 0f);
+                            break;
+                        case 7:
+                            startingPosition -= new Vector3((offsetX), (offsetY - 50), 0f);
+                            break;
+                        case 8:
+                            startingPosition -= new Vector3((offsetX + 10), -(offsetY + 40), 0f);
+                            break;
+                        case 9:
+                        case 10:
+                            startingPosition += new Vector3((offsetX - 20), (offsetY - 230), 0f);
+                            break;
+                        case 11:
+                            startingPosition += new Vector3((offsetX + 50), +(offsetY + 30), 0f);
+                            break;
+                        case 15:
+                        case 16:
+                        case 18:
+                        case 20:
+                        case 22:
+                            startingPosition -= new Vector3((offsetX - 80), +(offsetY + 30), 0f);
+                            break;
+                        case 14:
+                        case 17:
+                        case 19:
+                        case 21:
+                        case 23:
+                            startingPosition += new Vector3((offsetX - 55), -(offsetY + 50), 0f);
+                            break;
+                        case 12:
+                            startingPosition += new Vector3((offsetX), -(offsetY + 75), 0f);
+                            break;
+                        default:
+                            startingPosition -= new Vector3(offsetX, -offsetY, 0f);
+                            Debug.Log("defaults at fault");
+                            break;
+                    }
                     body.position = startingPosition;
                 }
-                else if (sceneBuildIndex == 9 || sceneBuildIndex == 10)
-                {
-
-                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 20), (offsetY - 230), 0f);
-                    body.position = startingPosition;
-
-                }
-                else if (sceneBuildIndex == 11)
-                {
-                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX + 50), +(offsetY + 30), 0f);
-                    body.position = startingPosition;
-                }
-                else if (sceneBuildIndex == 12)
-                {
-                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 30), -(offsetY + 80), 0f);
-                    body.position = startingPosition;
-
-                }
-                else if (sceneBuildIndex == 15 || sceneBuildIndex == 16 || sceneBuildIndex == 18 || sceneBuildIndex == 20 || sceneBuildIndex == 22)
-                {
-                    Vector3 startingPosition = exit.transform.position - new Vector3((offsetX - 80), +(offsetY + 30), 0f);
-                    body.position = startingPosition;
-                }
-                else if (sceneBuildIndex == 14 || sceneBuildIndex == 17 || sceneBuildIndex == 19 || sceneBuildIndex == 21 || sceneBuildIndex == 23)
-                {
-                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX - 55), -(offsetY + 50), 0f);
-                    body.position = startingPosition;
-
-                }
-                else if (sceneBuildIndex == 12)
-                {
-                    Vector3 startingPosition = exit.transform.position + new Vector3((offsetX), -(offsetY + 50), 0f);
-                    body.position = startingPosition;
-                }
-                else if (sceneBuildIndex == 30)
-                {
-                    Vector3 startingPosition = exit.transform.position - new Vector3((offsetX -50), -(offsetY + 40), 0f);
-                    body.position = startingPosition;
-                    
-                    
-                }
-
-                else
-                {
-                    Vector3 startingPosition = exit.transform.position - new Vector3(offsetX, -offsetY, 0f);
-                    body.position = startingPosition;
-                }
-
             }
         }
     }

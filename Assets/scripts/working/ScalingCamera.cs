@@ -14,16 +14,16 @@ public class ScalingCamera : MonoBehaviour
 
     private void Update()
     {
-        // Get the Y position of the parent (this GameObject)
+        // get the y of the parent
         float yPos = transform.position.y;
 
-        // Clamp the Y position within the specified range
+        // keep the y in the specific range
         yPos = Mathf.Clamp(yPos, minY, maxY);
 
-        // Calculate the scale based on the clamped Y position
+        // calculate
         float scale = Mathf.Lerp(minScale, maxScale, Mathf.InverseLerp(minY, maxY, yPos));
 
-        // Apply the scale to the parent GameObject
+        // apply
         transform.localScale = new Vector3(scale, scale, 1f);
     }
 

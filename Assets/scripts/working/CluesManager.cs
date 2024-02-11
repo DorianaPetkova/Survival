@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CluesManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     private static CluesManager instance;
     public GameObject office;
     public GameObject floor;
@@ -14,13 +14,13 @@ public class CluesManager : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            // Destroy this new instance, as there can only be one
+            // make sure there's one instance
             Destroy(gameObject);
             return;
         }
         instance = this;
 
-        // Make sure this instance persists between scenes
+        //making it persistent between scenes
         DontDestroyOnLoad(gameObject);
         office.SetActive(false);
         flashlight.SetActive(false);
@@ -28,12 +28,22 @@ public class CluesManager : MonoBehaviour
         floor.SetActive(false);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        //activating the clues based on the index and events
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 29)
+        {
+            office.SetActive(false);
+            flashlight.SetActive(false);
+            exit.SetActive(false);
+            floor.SetActive(false);
+        }
         if (SceneManager.GetActiveScene().buildIndex > 0 && SceneManager.GetActiveScene().buildIndex < 7 && mainMenu.clue1)
         {
-
+            flashlight.SetActive(false);
+            exit.SetActive(false);
+            floor.SetActive(false);
             office.SetActive(true);
         }
         if (SceneManager.GetActiveScene().buildIndex == 7)

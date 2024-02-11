@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class LevelMove : MonoBehaviour
 {
     public static int sceneBuildIndexPass;
@@ -17,7 +16,6 @@ public class LevelMove : MonoBehaviour
     {
         if (interactionSprite != null)
         {
-
             interactionSprite.enabled = false;
         }
     }
@@ -29,9 +27,10 @@ public class LevelMove : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = true;
-            if (CheckForEButton) // Check if the E button should trigger the scene change
+            // check if the E button should trigger the scene change
+            if (CheckForEButton)
             {
-                // Show the sprite when the player enters the collider
+                // show the sprite when the player enters the collider
                 if (interactionSprite != null)
                 {
                     interactionSprite.enabled = true;
@@ -40,7 +39,7 @@ public class LevelMove : MonoBehaviour
             }
             else
             {
-                // Load the new scene automatically
+                // load the new scene automatically
                 LoadScene();
 
             }
@@ -52,10 +51,10 @@ public class LevelMove : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = false;
-            // Hide the sprite when the player exits the collider
+            // hide the sprite when the player exits the collider
             if (interactionSprite != null)
             {
-                // Hide the sprite when the player exits the collider
+
                 interactionSprite.enabled = false;
             }
         }
@@ -70,16 +69,12 @@ public class LevelMove : MonoBehaviour
                 LoadScene();
             }
         }
-
-
-        // Check if the player is inside the trigger, sprite is enabled, and pressed 'E'.
     }
-
     private void LoadScene()
     {
         sceneinfo.NextScene = NextScene;
-        sceneinfo.isThirdDoor = isThirdDoor; // Set FromThirdDoor to true
-        sceneBuildIndexPass = sceneBuildIndex; // Store the sceneBuildIndex
+        sceneinfo.isThirdDoor = isThirdDoor;
+        sceneBuildIndexPass = sceneBuildIndex;
         SceneManager.LoadScene(sceneBuildIndex);
     }
 

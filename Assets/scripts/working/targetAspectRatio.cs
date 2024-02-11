@@ -6,7 +6,7 @@ using UnityEngine;
 [ExecuteAlways]
 public class targetAspectRatio : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     [SerializeField] private Camera cam;
 
     private readonly Vector2 aspectRatio = new(16, 9);
@@ -23,7 +23,7 @@ public class targetAspectRatio : MonoBehaviour
     {
         var currentScreenResolution = new Vector2(Screen.width, Screen.height);
 
-        // Don't run all the calculations if the screen resolution has not changed
+        // dont run the calculations if the resolutions hasnt changed
         if (lastResolution != currentScreenResolution)
         {
             CalculateCameraRect(currentScreenResolution);

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // declaring the songs and attaching them to sources
     public AudioClip cuteSong;
     public AudioClip earthquakeMusic;
     public AudioClip sirensMusic;
@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip ding;
     public AudioClip fail;
     public AudioClip win;
-
+    private bool visited2 = false;
     private AudioSource audioSource;
 
     private AudioSource audioSourceE;
@@ -23,27 +23,29 @@ public class AudioManager : MonoBehaviour
     private AudioSource audiogameFinished;
     private AudioSource audioWin;
     private AudioSource audioFail;
-
+    private AudioSource audioearthquake;
+    //declaring check-ins for future events
     public static bool el { get; set; } = false;
     public static bool quake { get; set; } = false;
     public static bool Squake { get; set; } = false;
 
+
     void Start()
     {
-        // Make this object persistent between scenes
+        // object persistent between scenes
         AudioManager[] managers = FindObjectsOfType<AudioManager>();
 
-        // If there's more than one AudioManager, destroy the duplicates
+        // destroy duplicates of audiomanager
         if (managers.Length > 1)
         {
             Destroy(gameObject);
         }
         else
         {
-            // Make this object persistent between scenes
+
             DontDestroyOnLoad(gameObject);
 
-            // Get the AudioSource component
+            // getting the audiosource
             audioSource = GetComponent<AudioSource>();
             audioSourceE = gameObject.AddComponent<AudioSource>();
             audioDing = gameObject.AddComponent<AudioSource>();
@@ -51,19 +53,22 @@ public class AudioManager : MonoBehaviour
             audiogameFinished = gameObject.AddComponent<AudioSource>();
             audioWin = gameObject.AddComponent<AudioSource>();
             audioFail = gameObject.AddComponent<AudioSource>();
+            audioearthquake = gameObject.AddComponent<AudioSource>();
 
 
-            // Start playing the cute song throughout the game
+            // attaching clips and playing the menu song
             audioSource.clip = cuteSong;
             audioSourceE.clip = elevatormusic;
             audioDing.clip = ding;
             audioFail.clip = fail;
             audioWin.clip = win;
+            audioearthquake.clip = earthquakeMusic;
 
             audioSiren.clip = sirensMusic;
             audiogameFinished.clip = gameFinishedSound;
             audiogameFinished.Play();
 
+            //adjusting volume and loop
             audioSource.volume = 0.5f;
             audiogameFinished.volume = 0.5f;
             audioSiren.volume = 0.5f;
@@ -73,46 +78,63 @@ public class AudioManager : MonoBehaviour
             audioSourceE.loop = true;
             audioSiren.loop = true;
             audiogameFinished.loop = true;
-
-            // Subscribe to the scene loaded event
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
     }
     void Update()
     {
+        //CHECK IF IT WORKS
+
         if (SceneManager.GetActiveScene().buildIndex == 10)
         {
             CheckKeyInput();
-
         }
+        //checks for paused menu
+        if (mainMenu.earthquakePaused)
+            audioearthquake.Pause();
+        else
+            audioearthquake.UnPause();
+
+
     }
+
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Check the scene number and trigger audio events accordingly
+
+        // audio is triggered by the scene index
         switch (scene.buildIndex)
         {
             case 0:
+                visited2 = false;
+
                 audioSource.Pause();
+                audioSiren.Pause();
+                audioSourceE.Pause();
                 audiogameFinished.UnPause();
+
                 break;
             case 1:
+
                 audiogameFinished.Pause();
-                audioSource.Play();
+                if (!visited2)
+                    audioSource.Play();
+                else
+                    audioSource.UnPause();
+
+                break;
+            case 2:
+                visited2 = true;
                 break;
             case 9:
-                // Assuming elevatorMusic is an AudioClip assigned in the Inspector
+
                 audioSourceE.Pause();
                 audioSource.UnPause();
 
-
                 break;
             case 10:
-                // Scene 9: Stop cute music, play elevator sound
                 audioSource.Pause();
-
-                // Assuming elevatorMusic is an AudioClip assigned in the Inspector
                 if (el == false)
                 {
                     audioSourceE.Play();
@@ -121,78 +143,69 @@ public class AudioManager : MonoBehaviour
                 else
                 { audioSourceE.UnPause(); }
                 break;
-
             case 11:
-
-                // Scene 11: Unpause cute song
-                // Assuming elevatorMusic is an AudioClip assigned in the Inspector
                 audioSourceE.Pause();
                 if (!Squake)
                     audioSource.UnPause();
                 else
                     audioSource.Stop();
                 break;
-
             case 12:
-                // Scene 12: Play earthquake music, then play sirens music
                 audioSource.Pause();
                 quake = true;
                 if (!Squake)
                 {
-                    PlayOneShot(earthquakeMusic);
                     Squake = true;
-                    Invoke("PlaySirensMusic", earthquakeMusic.length);
+                    audioearthquake.Play();
+
+                    StartCoroutine(PlaySirensAfterEarthquake());
                 }
                 break;
             case 27:
+                audioSource.Pause();
                 audioSiren.Pause();
-
-                audioFail.Play();
-                Debug.Log("fail");
+                audioSourceE.Pause();
                 audiogameFinished.UnPause();
+                audioFail.Play();
+
                 break;
             case 28:
                 if (Ebutton.gotit)
                     audioWin.Play();
-                Debug.Log("win");
 
                 break;
             case 29:
+                audioSiren.Pause(); audioSource.Pause();
                 audioSiren.Pause();
-                audioWin.Play();
+                audioSourceE.Pause();
                 audiogameFinished.UnPause();
+                audioWin.Play();
                 Debug.Log("win");
                 break;
-
         }
     }
 
-    void PlayBackgroundMusic(AudioClip audioClip)
-    {
-        // Play background music
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);
-    }
 
 
-    void PlayOneShot(AudioClip audioClip)
-    {
-        // Play a one-shot sound effect
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);
-    }
-
-    void PlaySirensMusic()
-    {
-
-
-        // Play sirens music
-        audioSiren.Play();
-    }
     void CheckKeyInput()
     {
-        // Check for key presses and play elevator sound
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2))
+        if (Elevator2.playerInsideCollider)
+        // if the key is pressed, play ding
         {
-            audioDing.Play();
+            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                audioDing.Play();
+            }
         }
+    }
+
+    IEnumerator PlaySirensAfterEarthquake()
+    {
+        // wait until the earthquake sound finishes playing
+        while (audioearthquake.isPlaying || audioearthquake.time < audioearthquake.clip.length)
+        {
+            yield return null;
+        }
+        audioSiren.Play();
     }
 }

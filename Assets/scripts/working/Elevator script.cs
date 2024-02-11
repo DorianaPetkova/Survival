@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class Elevatorscript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //sprites to show, objects to be glided, colliders to activate
     public GameObject upArrowSprite;
     public GameObject downArrowSprite;
     private bool playerInsideCollider;
-    public GameObject glidingObject1; // The object to be glided
+    public GameObject glidingObject1;
     public GameObject glidingObject2;
-    public float glideDistance1 = 117.0f; // Adjust the distance to glide
+    //distance for gliding
+    public float glideDistance1 = 117.0f;
     public float glideDistance2 = 119.0f;
     public float glideSpeed = 2.0f;
-    private Vector3 originalPosition1; // Store the original position of the first gliding object
+    // Store the original position of the first gliding object
+    private Vector3 originalPosition1;
     private Vector3 originalPosition2;
-
-
-
 
     void Start()
     {
-        // Disable both arrow sprites at the start
+        // disabling arrow sprites
         glidingObject1.SetActive(true);
         glidingObject2.SetActive(true);
         upArrowSprite.SetActive(false);
@@ -36,7 +35,6 @@ public class Elevatorscript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Player entered the collider
             playerInsideCollider = true;
         }
     }
@@ -45,17 +43,17 @@ public class Elevatorscript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Player exited the collider
+
             playerInsideCollider = false;
             downArrowSprite.SetActive(false);
             upArrowSprite.SetActive(false);
-            GlideObject(originalPosition1, glideDistance1, glidingObject1);
-
-            // Glide the second object back to its original position
-            GlideObject(originalPosition2, glideDistance2, glidingObject2);
+            if (glidingObject1 != null && glidingObject1.activeSelf)
+                GlideObject(originalPosition1, glideDistance1, glidingObject1);
+            // gliding to the original position
+            if (glidingObject2 != null && glidingObject2.activeSelf)
+                GlideObject(originalPosition2, glideDistance2, glidingObject2);
         }
     }
-
     void Update()
     {
         if (playerInsideCollider)
@@ -63,57 +61,36 @@ public class Elevatorscript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                // Player pressed the UpArrow key
                 ShowUpArrowEffect();
-
-
                 GlideObject(originalPosition1 + Vector3.right * glideDistance1, glideDistance1, glidingObject1);
                 GlideObject(originalPosition2 - Vector3.right * glideDistance2, glideDistance2, glidingObject2);
-
-
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                // Player pressed the DownArrow key
                 ShowDownArrowEffect();
-
                 GlideObject(originalPosition1 + Vector3.right * glideDistance1, glideDistance1, glidingObject1);
                 GlideObject(originalPosition2 - Vector3.right * glideDistance2, glideDistance2, glidingObject2);
-
             }
         }
-
-
-
     }
-
     private void ShowUpArrowEffect()
     {
-        // Logic to show sprite child 1 (up arrow effect)
-        // For example, you might enable a particle system, change sprite color, etc.
         upArrowSprite.SetActive(true);
-        downArrowSprite.SetActive(false); // Optional: Hide the down arrow
+        downArrowSprite.SetActive(false);
     }
-
     private void ShowDownArrowEffect()
     {
-        // Logic to show sprite child 2 (down arrow effect)
-        // For example, you might enable a particle system, change sprite color, etc.
         downArrowSprite.SetActive(true);
-        upArrowSprite.SetActive(false); // Optional: Hide the up arrow
+        upArrowSprite.SetActive(false);
     }
     private void GlideObject(Vector3 targetPosition, float distance, GameObject glidingObject)
     {
-        // Smoothly move the object to the target position
+        // moving doors into position
         if (glidingObject.activeSelf && glidingObject != null)
         {
-            // Smoothly move the object to the target position
             StartCoroutine(GlideObjectCoroutine(targetPosition, distance, glidingObject));
         }
     }
-
-
-
     private IEnumerator GlideObjectCoroutine(Vector3 targetPosition, float distance, GameObject glidingObject)
     {
         float elapsedTime = 0f;
@@ -125,13 +102,10 @@ public class Elevatorscript : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        // Ensure the object reaches the target position precisely
+        // smooth gliding to the position
         if (glidingObject != null)
         {
             glidingObject.transform.position = targetPosition;
         }
     }
-
-
 }
