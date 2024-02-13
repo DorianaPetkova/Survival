@@ -70,6 +70,7 @@ public class mainMenu : MonoBehaviour
         if (!GameController.Instance.SceneVisited6 && textCanvas3 != null)
         {
             textCanvas3.SetActive(true);
+            Debug.Log("canvas 3 true?");
 
         }
         else if (GameController.Instance.SceneVisited6 && textCanvas3 != null)
@@ -78,6 +79,7 @@ public class mainMenu : MonoBehaviour
         }
         if (textCanvas3 != null)
             textCanvas3.SetActive(false);
+
 
     }
     void Update()
@@ -109,6 +111,10 @@ public class mainMenu : MonoBehaviour
         if (textCanvas3 != null)
         {
             textCanvas3.SetActive(false);
+        }
+        if (textCanvasKitchen != null)
+        {
+            textCanvasKitchen.SetActive(false);
         }
 
 
@@ -264,6 +270,10 @@ public class mainMenu : MonoBehaviour
         {
             textCanvas3.SetActive(false);
         }
+        if (textCanvasKitchen != null)
+        {
+            textCanvasKitchen.SetActive(false);
+        }
         SceneManager.LoadScene("MainMenu");
         Reset();
     }
@@ -286,7 +296,7 @@ public class mainMenu : MonoBehaviour
         cluek1 = false;
         cluek3 = false;
         clue2 = false;
-        move = false;
+
         Shake.shook = false;
         ColliderK.usedW = false;
         ColliderK.fireOff = false;
@@ -297,5 +307,6 @@ public class mainMenu : MonoBehaviour
     public void StartButton()
     {
         SceneManager.LoadScene("CityScene 1");
+        move = false;
     }
 }

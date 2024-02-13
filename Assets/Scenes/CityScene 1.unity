@@ -1987,7 +1987,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 798854090}
         m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
         m_MethodName: PlayButton
         m_Mode: 1
@@ -2869,6 +2869,7 @@ MonoBehaviour:
   textCanvas1: {fileID: 0}
   textCanvas2: {fileID: 1716712495}
   textCanvas3: {fileID: 649177969}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &649177972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3106,6 +3107,7 @@ MonoBehaviour:
   textCanvas1: {fileID: 0}
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &798854091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5419,6 +5421,7 @@ MonoBehaviour:
   textCanvas1: {fileID: 0}
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &1652055265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5961,6 +5964,7 @@ MonoBehaviour:
   textCanvas1: {fileID: 0}
   textCanvas2: {fileID: 1716712495}
   textCanvas3: {fileID: 649177969}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &1716712497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6168,6 +6172,7 @@ MonoBehaviour:
   textCanvas1: {fileID: 0}
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!1 &1781865397
 GameObject:
   m_ObjectHideFlags: 0

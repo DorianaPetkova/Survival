@@ -2447,7 +2447,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 56696874}
         m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
         m_MethodName: PlayButton
         m_Mode: 1
@@ -3046,6 +3046,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6fa31a31be85942a8be5222e07b66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderExit: {fileID: 0}
+  colliderEntrance: {fileID: 0}
+  colliderDoor: {fileID: 0}
   textCanvas: {fileID: 1153397501}
 --- !u!114 &1153397504
 MonoBehaviour:
@@ -3228,6 +3231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6fa31a31be85942a8be5222e07b66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderExit: {fileID: 2102105199}
+  colliderEntrance: {fileID: 513480792}
+  colliderDoor: {fileID: 452703692}
   textCanvas: {fileID: 1153397501}
 --- !u!1 &1206073437
 GameObject:

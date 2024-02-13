@@ -289,7 +289,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 376119415}
         m_TargetAssemblyTypeName: mainMenu, Assembly-CSharp
         m_MethodName: PlayButton
         m_Mode: 1
@@ -588,6 +588,9 @@ MonoBehaviour:
   popupCanvas: {fileID: 376119414}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 0}
+  textCanvas2: {fileID: 0}
+  textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &376119416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,6 +3594,9 @@ MonoBehaviour:
   popupCanvas: {fileID: 376119414}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 0}
+  textCanvas2: {fileID: 0}
+  textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &1779050137
 MonoBehaviour:
   m_ObjectHideFlags: 0

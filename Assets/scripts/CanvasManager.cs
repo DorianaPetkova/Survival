@@ -59,6 +59,7 @@ public class CanvasManager : MonoBehaviour
             canvas2.SetActive(true);
             if (!mainMenu.move)
             {
+
                 textR.SetActive(true);
                 Debug.Log("fire should be false");
                 Debug.Log($"{mainMenu.move}");

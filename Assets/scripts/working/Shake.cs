@@ -26,7 +26,9 @@ public class Shake : MonoBehaviour
             return instance;
         }
     }
-
+    public GameObject colliderExit;
+    public GameObject colliderEntrance;
+    public GameObject colliderDoor;
 
     private float shakePower;
     private float shakeFadeTime;
@@ -49,6 +51,12 @@ public class Shake : MonoBehaviour
         currentDelay = delayTimer;
         if (textCanvas != null)
             textCanvas.SetActive(false);
+        if (colliderExit != null)
+            colliderExit.SetActive(false);
+        if (colliderDoor != null)
+            colliderDoor.SetActive(false);
+        if (colliderEntrance != null)
+            colliderEntrance.SetActive(false);
     }
     void Update()
     {
@@ -70,6 +78,12 @@ public class Shake : MonoBehaviour
         if (isShaking && shakeTimeRemaining <= 0)
         {
             // shaking done, activate the rectangle
+            if (colliderExit != null)
+                colliderExit.SetActive(true);
+            if (colliderDoor != null)
+                colliderDoor.SetActive(true);
+            if (colliderEntrance != null)
+                colliderEntrance.SetActive(true);
 
             if (!GameController.Instance.SceneVisited2 && textCanvas != null)
             {
