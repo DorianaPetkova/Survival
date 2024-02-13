@@ -649,7 +649,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.864349, y: 36.65056}
+  m_Offset: {x: 10.864349, y: 84.09085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -660,7 +660,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.957947, y: 69.39316}
+  m_Size: {x: 21.957947, y: 19.456055}
   m_EdgeRadius: 0
 --- !u!4 &234318161
 Transform:
@@ -784,6 +784,9 @@ MonoBehaviour:
   popupCanvas: {fileID: 514704164}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 1628831740}
+  textCanvas2: {fileID: 0}
+  textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &514704166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2389,6 +2392,8 @@ MonoBehaviour:
   colliderF: {fileID: 0}
   colliderEntrance: {fileID: 234318156}
   colliderStairs: {fileID: 0}
+  colliderkitchen: {fileID: 0}
+  colliderWinK: {fileID: 0}
 --- !u!4 &1526699328
 Transform:
   m_ObjectHideFlags: 0
@@ -2754,6 +2759,9 @@ MonoBehaviour:
   popupCanvas: {fileID: 514704164}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 1628831740}
+  textCanvas2: {fileID: 0}
+  textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &1628831742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2874,6 +2882,9 @@ MonoBehaviour:
   popupCanvas: {fileID: 514704164}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 1628831740}
+  textCanvas2: {fileID: 0}
+  textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &1691768656
 MonoBehaviour:
   m_ObjectHideFlags: 0

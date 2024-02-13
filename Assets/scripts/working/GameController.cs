@@ -34,11 +34,22 @@ public class GameController : MonoBehaviour
     //making sure if gender isnt selected, default is male
     public string selectedCharacter = "Male";
     public string selectedLevel;
+    //earthquake 1
     public static bool sceneVisited { get; set; } = false;
+    //earthquake 2
     public static bool sceneVisited1 { get; set; } = false;
+    //shake of earthquake
     public static bool sceneVisited2 { get; set; } = false;
+    //e button flashlight
     public static bool sceneVisited3 { get; set; } = false;
+    //KITCHEN
     public static bool sceneVisited4 { get; set; } = false;
+    //not taken
+    public static bool sceneVisited5 { get; set; } = false;
+    //fire 1
+    public static bool sceneVisited6 { get; set; } = false;
+    //fire restaurant
+    public static bool sceneVisited7 { get; set; } = false;
     //checks if scene has been visited
     public bool SceneVisited
     {
@@ -65,4 +76,15 @@ public class GameController : MonoBehaviour
         get { return sceneVisited4; }
         set { sceneVisited4 = value; }
     }
+    public bool SceneVisited5
+    {
+        get { return sceneVisited5; }
+        set { sceneVisited5 = value; }
+    }
+    public bool SceneVisited6
+    {
+        get { return sceneVisited6; }
+        set { sceneVisited6 = value; }
+    }
+
 }

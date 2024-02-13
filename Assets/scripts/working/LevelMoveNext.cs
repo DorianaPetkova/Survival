@@ -18,7 +18,7 @@ public class LevelMoveNext : MonoBehaviour
     }
     void Update()
     {
-        if (!mainMenu.clue1 && SceneManager.GetActiveScene().buildIndex == 1)
+        if (!mainMenu.move && SceneManager.GetActiveScene().buildIndex == 1)
         {
 
             body.position = new Vector3(-114f, 25f, 0f);
@@ -86,6 +86,12 @@ public class LevelMoveNext : MonoBehaviour
                         case 28:
                             startingPosition += new Vector3((offsetX + 100), -(offsetY + 60), 0f);
                             break;
+                        case 31:
+                            startingPosition += new Vector3((offsetX - 80), -(offsetY + 55), 0f);
+                            Debug.Log("from kithen to restaurant");
+                            Debug.Log($"{startingPosition}");
+                            break;
+
 
                         default:
                             startingPosition += new Vector3(offsetX, offsetY, 0f);
@@ -112,6 +118,22 @@ public class LevelMoveNext : MonoBehaviour
                     Vector3 startingPosition = exit.transform.position - new Vector3((offsetX), (offsetY - 50), 0f);
                     body.position = startingPosition;
                 }
+                else if (sceneBuildIndex == 30)
+                {
+                    Debug.Log("restaurant");
+                    Vector3 startingPosition = thirdDoor.transform.position + new Vector3((35), (offsetY + 115), 0f);
+                    body.position = startingPosition;
+                }
+
+                else if (sceneBuildIndex == 2)
+                {
+                    Vector3 startingPosition = thirdDoor.transform.position - new Vector3((offsetX - 75), (offsetY + 20), 0f);
+                    body.position = startingPosition;
+                    Debug.Log("coming from restaurant to street");
+                    Debug.Log($"{thirdDoor.transform.position}");
+                    Debug.Log($"{body.position}");
+                }
+
             }
             else
             {
@@ -156,6 +178,7 @@ public class LevelMoveNext : MonoBehaviour
                         case 12:
                             startingPosition += new Vector3((offsetX), -(offsetY + 75), 0f);
                             break;
+
                         default:
                             startingPosition -= new Vector3(offsetX, -offsetY, 0f);
                             Debug.Log("defaults at fault");

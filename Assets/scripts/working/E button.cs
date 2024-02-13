@@ -40,6 +40,7 @@ public class Ebutton : MonoBehaviour
         {
             textCanvas.SetActive(false);
             clue4 = true;
+            Debug.Log($"clue 4 is: {clue4}");
 
         }
         GameController.Instance.SceneVisited3 = true;

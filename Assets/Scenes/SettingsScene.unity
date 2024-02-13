@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 385150354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2380369, y: 2.2380369, z: 2.2380369}
+  m_LocalScale: {x: 2.455574, y: 2.455574, z: 2.455574}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1979794700}
@@ -1481,6 +1481,9 @@ MonoBehaviour:
   popupCanvas: {fileID: 0}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 0}
+  textCanvas2: {fileID: 0}
+  textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!114 &1979794697
 MonoBehaviour:
   m_ObjectHideFlags: 0

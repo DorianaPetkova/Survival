@@ -76,6 +76,7 @@ public class LevelMove : MonoBehaviour
         sceneinfo.isThirdDoor = isThirdDoor;
         sceneBuildIndexPass = sceneBuildIndex;
         SceneManager.LoadScene(sceneBuildIndex);
+        Debug.Log("wtf is going on");
     }
 
 

@@ -130,11 +130,12 @@ public class Timer : MonoBehaviour
             Ebutton.clue4 = false;
             Shake.clue3 = false;
         }
-        if (SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26)
+        if (SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26 || SceneManager.GetActiveScene().buildIndex == 32 || SceneManager.GetActiveScene().buildIndex == 33)
         {
             StopTimer();
             ResetTimer();
             HideStars();
+            Debug.Log("the stars shall we be hidden");
             mainMenu.clue1 = false;
             mainMenu.clue2 = false;
             Ebutton.clue4 = false;

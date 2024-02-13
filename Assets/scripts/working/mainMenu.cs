@@ -9,9 +9,22 @@ public class mainMenu : MonoBehaviour
     public GameObject popupCanvas;
     public GameObject textCanvas;
     public GameObject textCanvas1;
+    public GameObject textCanvas2;
+    public GameObject textCanvas3;
+    public GameObject textCanvasKitchen;
+
+
+
+
     public static bool count { get; set; } = false;
     public static bool clue1 { get; set; } = false;
     public static bool clue2 { get; set; } = false;
+    public static bool cluek1 { get; set; } = false;
+    public static bool cluek2 { get; set; } = false;
+    public static bool cluek3 { get; set; } = false;
+
+    public static bool move { get; set; } = false;
+
 
     public static bool showmenu { get; set; } = false;
     public static bool earthquakePaused { get; set; } = false;
@@ -45,6 +58,30 @@ public class mainMenu : MonoBehaviour
         {
             textCanvas1.SetActive(false);
         }
+        if (!GameController.Instance.SceneVisited5 && textCanvas2 != null)
+        {
+            textCanvas2.SetActive(true);
+
+        }
+        else if (GameController.Instance.SceneVisited5 && textCanvas2 != null)
+        {
+            textCanvas2.SetActive(false);
+        }
+        if (!GameController.Instance.SceneVisited6 && textCanvas3 != null)
+        {
+            textCanvas3.SetActive(true);
+
+        }
+        else if (GameController.Instance.SceneVisited6 && textCanvas3 != null)
+        {
+            textCanvas3.SetActive(false);
+        }
+        if (textCanvas3 != null)
+            textCanvas3.SetActive(false);
+
+    }
+    void Update()
+    {
 
     }
 
@@ -64,8 +101,17 @@ public class mainMenu : MonoBehaviour
         if (textCanvas1 != null)
         {
             textCanvas1.SetActive(false);
-
         }
+        if (textCanvas2 != null)
+        {
+            textCanvas2.SetActive(false);
+        }
+        if (textCanvas3 != null)
+        {
+            textCanvas3.SetActive(false);
+        }
+
+
         if (popupCanvas != null)
         {
             popupCanvas.SetActive(true);
@@ -109,6 +155,7 @@ public class mainMenu : MonoBehaviour
         {
             textCanvas.SetActive(false);
             clue1 = true;
+            move = true;
         }
         // set the visited state using the GameController
         GameController.Instance.SceneVisited = true;
@@ -119,9 +166,63 @@ public class mainMenu : MonoBehaviour
         {
             textCanvas1.SetActive(false);
             clue2 = true;
+
+
         }
         GameController.Instance.SceneVisited1 = true;
     }
+    public void HideText2()
+    {
+        if (textCanvas2 != null)
+        {
+            textCanvas2.SetActive(false);
+            move = true;
+            cluek1 = true;
+            Debug.Log("fire should be false");
+
+        }
+        GameController.Instance.SceneVisited5 = true;
+    }
+    public void HideText3()
+    {
+        if (textCanvas3 != null)
+        {
+            textCanvas3.SetActive(false);
+            cluek2 = true;
+
+            Debug.Log("fire should be false");
+
+        }
+        GameController.Instance.SceneVisited6 = true;
+    }
+    public void HideTextK()
+    {
+        if (textCanvasKitchen != null)
+        {
+            textCanvasKitchen.SetActive(false);
+            cluek3 = true;
+        }
+    }
+    public void Information()
+    {
+        string selectedLevel = GameController.Instance.selectedLevel;
+        if (selectedLevel == "Earthquake")
+        {
+
+            Debug.Log("set to earthquake");
+            SceneManager.LoadScene("EarthquakeInfo");
+
+
+        }
+        if (selectedLevel == "FireHazzard")
+        {
+            SceneManager.LoadScene("FireInfo");
+            Debug.Log("set to fire");
+
+        }
+    }
+
+
     public void ExitButton()
     {
         Application.Quit();
@@ -142,12 +243,29 @@ public class mainMenu : MonoBehaviour
 
     public void MenuButton()
     {
-        SceneManager.LoadScene("MainMenu");
-        Reset();
+
         if (popupCanvas != null)
         {
             popupCanvas.SetActive(false);
         }
+        if (textCanvas != null)
+        {
+            textCanvas.SetActive(false);
+        }
+        if (textCanvas1 != null)
+        {
+            textCanvas1.SetActive(false);
+        }
+        if (textCanvas2 != null)
+        {
+            textCanvas2.SetActive(false);
+        }
+        if (textCanvas3 != null)
+        {
+            textCanvas3.SetActive(false);
+        }
+        SceneManager.LoadScene("MainMenu");
+        Reset();
     }
     public void Reset()
     {
@@ -165,7 +283,15 @@ public class mainMenu : MonoBehaviour
         clue1 = false;
         clue2 = false;
         count = false;
+        cluek1 = false;
+        cluek3 = false;
+        clue2 = false;
+        move = false;
         Shake.shook = false;
+        ColliderK.usedW = false;
+        ColliderK.fireOff = false;
+        TextCanvasManager.textOff = false;
+        TextCanvasManager.nofire = false;
 
     }
     public void StartButton()
