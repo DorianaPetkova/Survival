@@ -78,7 +78,7 @@ public class Shake : MonoBehaviour
         if (isShaking && shakeTimeRemaining <= 0)
         {
             // shaking done, activate the rectangle
-            if (colliderExit != null)
+            if (colliderExit != null && Ebutton.gotit)
                 colliderExit.SetActive(true);
             if (colliderDoor != null)
                 colliderDoor.SetActive(true);

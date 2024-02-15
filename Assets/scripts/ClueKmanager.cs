@@ -6,22 +6,12 @@ using UnityEngine.SceneManagement;
 public class ClueKmanager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private static ClueKmanager instance;
+    
     public GameObject restaurant;
     public GameObject kitchen;
 
     void Start()
     {
-        if (instance != null && instance != this)
-        {
-            // make sure there's one instance
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-
-        //making it persistent between scenes
-        DontDestroyOnLoad(gameObject);
         restaurant.SetActive(true);
         restaurant.SetActive(false);
         kitchen.SetActive(false);

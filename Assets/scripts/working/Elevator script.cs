@@ -7,7 +7,7 @@ public class Elevatorscript : MonoBehaviour
     //sprites to show, objects to be glided, colliders to activate
     public GameObject upArrowSprite;
     public GameObject downArrowSprite;
-    private bool playerInsideCollider;
+    public static bool playerInsideCollider;
     public GameObject glidingObject1;
     public GameObject glidingObject2;
     //distance for gliding

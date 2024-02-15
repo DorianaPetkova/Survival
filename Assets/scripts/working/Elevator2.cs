@@ -58,9 +58,13 @@ public class Elevator2 : MonoBehaviour
         {
 
             playerInsideCollider = false;
+            if(two!=null)
             two.SetActive(false);
+            if(one!=null)
             one.SetActive(false);
+            if(colliderOne!=null)
             colliderOne.SetActive(false);
+            if(colliderTwo!=null)
             colliderTwo.SetActive(false);
 
             if (glidingObject1 != null && glidingObject1.activeSelf)

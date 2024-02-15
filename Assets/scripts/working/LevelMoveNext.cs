@@ -50,6 +50,9 @@ public class LevelMoveNext : MonoBehaviour
                     Vector3 startingPosition = entrance.transform.position;
                     switch (sceneBuildIndex)
                     {
+                        case 6:
+                        startingPosition += new Vector3((offsetX - 40), (offsetY + 25), 0f);
+                        break;
                         case 7:
                             startingPosition += new Vector3((offsetX - 55), (offsetY + 125), 0f);
                             break;

@@ -5,23 +5,13 @@ using UnityEngine.SceneManagement;
 public class CluesManager : MonoBehaviour
 {
 
-    private static CluesManager instance;
+    
     public GameObject office;
     public GameObject floor;
     public GameObject flashlight;
     public GameObject exit;
     void Start()
     {
-        if (instance != null && instance != this)
-        {
-            // make sure there's one instance
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-
-        //making it persistent between scenes
-        DontDestroyOnLoad(gameObject);
         office.SetActive(false);
         flashlight.SetActive(false);
         exit.SetActive(false);

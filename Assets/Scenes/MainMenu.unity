@@ -661,6 +661,9 @@ MonoBehaviour:
   popupCanvas: {fileID: 0}
   textCanvas: {fileID: 0}
   textCanvas1: {fileID: 0}
+  textCanvas2: {fileID: 0}
+  textCanvas3: {fileID: 0}
+  textCanvasKitchen: {fileID: 0}
 --- !u!1 &991020218
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +772,7 @@ GameObject:
   - component: {fileID: 1056510658}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

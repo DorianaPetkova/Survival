@@ -40,11 +40,16 @@ public class TextCanvasManager : MonoBehaviour
     }
     public void HideText1()
     {
+        Debug.Log("hidetext1");
         if (textStove != null)
         {
+            Debug.Log("textstove");
             textStove.SetActive(false);
             if (fire != null)
+            {
                 fire.SetActive(false);
+                Debug.Log("fire is false");
+            }
             textOff = true;
 
         }

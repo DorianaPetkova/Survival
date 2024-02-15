@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
     public static bool el { get; set; } = false;
     public static bool quake { get; set; } = false;
     public static bool Squake { get; set; } = false;
+    
 
 
     void Start()
@@ -86,7 +87,7 @@ public class AudioManager : MonoBehaviour
     {
         //CHECK IF IT WORKS
 
-        if (SceneManager.GetActiveScene().buildIndex == 10)
+        if (SceneManager.GetActiveScene().buildIndex == 10 || SceneManager.GetActiveScene().buildIndex == 9)
         {
             CheckKeyInput();
         }
@@ -182,6 +183,11 @@ public class AudioManager : MonoBehaviour
                 audioWin.Play();
                 Debug.Log("win");
                 break;
+            case 31:
+                audioSiren.Play();
+                audioSource.Pause();
+                break;
+           
         }
     }
 
@@ -193,6 +199,13 @@ public class AudioManager : MonoBehaviour
         // if the key is pressed, play ding
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                audioDing.Play();
+            }
+        }
+        if(Elevatorscript.playerInsideCollider)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 audioDing.Play();
             }
