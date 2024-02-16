@@ -59,5 +59,6 @@
   "dotnet.defaultSolution": "Survival.sln",
   "accessibility.alert.error": true,
   "audioCues.lineHasError": "off",
-  "csharp.showOmnisharpLogOnError": true
+  "csharp.showOmnisharpLogOnError": true,
+  "debug.onTaskErrors": "showErrors"
 }

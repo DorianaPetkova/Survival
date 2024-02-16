@@ -51,17 +51,7 @@ public class KitchenStars : MonoBehaviour
                 star2.SetActive(true);
             }
 
-            /*star1.SetActive(true);
-            star2.SetActive(true);
-            star3.SetActive(true);
-            if (ColliderK.usedW)
-            {
-                star3.SetActive(false);
-            }
-            if (!TextCanvasManager.nofire)
-            {
-                star2.SetActive(false);
-            }*/
+
         }
         if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26 || SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 32 || SceneManager.GetActiveScene().buildIndex == 33)
         {

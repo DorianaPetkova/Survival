@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: OfficeTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: OfficeTable
+  m_TableCollectionNameGuidString: 3ecbd192f9720514ca12769191ced74d
+  m_Entries:
+  - m_Id: 12059213824
+    m_Key: Office text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174672379904
+    m_Key: clue office
+    m_Metadata:
+      m_Items: []
+  - m_Id: 234793533440
+    m_Key: find light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 541032251392
+    m_Key: find exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665020071936
+    m_Key: second floor clue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21737127870464
+    m_Key: late, second floor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22323051167744
+    m_Key: lights out
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88933346639872
+    m_Key: flashlight
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3859183932807315465
+  references:
+    version: 2
+    RefIds:
+    - rid: 3859183932807315465
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1708090464940

@@ -13,7 +13,8 @@ public class mainMenu : MonoBehaviour
     public GameObject textCanvas3;
     public GameObject textCanvasKitchen;
 
-    public static bool count { get; set; } = false;
+
+
     public static bool clue1 { get; set; } = false;
     public static bool clue2 { get; set; } = false;
     public static bool cluek1 { get; set; } = false;
@@ -22,6 +23,7 @@ public class mainMenu : MonoBehaviour
 
     public static bool move { get; set; } = false;
 
+    public static bool count { get; set; } = false;
 
     public static bool showmenu { get; set; } = false;
     public static bool earthquakePaused { get; set; } = false;
@@ -78,38 +80,8 @@ public class mainMenu : MonoBehaviour
             textCanvas3.SetActive(false);
 
 
-    }
-    public void SoundOff()
-    {
-        // Find the GameObject with the AudioSource component
-        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
-        // Check if the audioObject is not null and has an AudioSource component
-        if (audioObject != null)
-        {
-            AudioSource audioSource = audioObject.GetComponent<AudioSource>();
-            // If an AudioSource component is found, set its volume to 0
-            if (audioSource != null)
-            {
-                audioSource.volume = 0f; // Mute the audio
-            }
-        }
-    }
-    public void SoundOn()
-    {
-        // Find the GameObject with the AudioSource component
-        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
-        // Check if the audioObject is not null and has an AudioSource component
-        if (audioObject != null)
-        {
-            AudioSource audioSource = audioObject.GetComponent<AudioSource>();
-            // If an AudioSource component is found, set its volume to 0
-            if (audioSource != null)
-            {
-                audioSource.volume = 0.5f;// Mute the audio
-            }
-        }
-    }
 
+    }
 
 
     public void ShowPauseMenu()
