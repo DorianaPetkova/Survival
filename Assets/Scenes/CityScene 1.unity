@@ -579,7 +579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50454134, y: 0.5135993}
-  m_AnchoredPosition: {x: 13, y: -9}
+  m_AnchoredPosition: {x: 19, y: -12}
   m_SizeDelta: {x: 765.0641, y: 135.1627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &104615846
@@ -1215,8 +1215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50454134, y: 0.5135993}
-  m_AnchoredPosition: {x: -30.775, y: 21.000011}
-  m_SizeDelta: {x: 1253.833, y: 453.518}
+  m_AnchoredPosition: {x: 10, y: 35}
+  m_SizeDelta: {x: 1369.488, y: 453.518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242181689
 MonoBehaviour:
@@ -1582,7 +1582,7 @@ GameObject:
   - component: {fileID: 318102615}
   - component: {fileID: 318102614}
   m_Layer: 5
-  m_Name: put out fire
+  m_Name: restaurant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1605,8 +1605,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 449}
-  m_SizeDelta: {x: 601.392, y: 84.834}
+  m_AnchoredPosition: {x: 18.159, y: 449}
+  m_SizeDelta: {x: 644.99, y: 84.834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318102614
 MonoBehaviour:
@@ -2273,8 +2273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50454134, y: 0.5135993}
-  m_AnchoredPosition: {x: 5, y: -18}
-  m_SizeDelta: {x: 906.1934, y: 135.1627}
+  m_AnchoredPosition: {x: 4, y: -10}
+  m_SizeDelta: {x: 982.81, y: 135.1627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548878956
 MonoBehaviour:
@@ -2309,7 +2309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: " \u041E\u0442\u0438\u0434\u0438 \u0432 \u0440\u0435\u0441\u0442\u043E\u0440\u0430\u043D\u0442\u0430"
 --- !u!222 &548878957
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3134,7 +3134,7 @@ GameObject:
   - component: {fileID: 859141462}
   - component: {fileID: 859141461}
   m_Layer: 5
-  m_Name: put out fire (1)
+  m_Name: kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3195,8 +3195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.647, y: 449}
-  m_SizeDelta: {x: 647.751, y: 84.834}
+  m_AnchoredPosition: {x: 42, y: 452}
+  m_SizeDelta: {x: 530.23, y: 84.834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &871836050
 GameObject:
@@ -3387,8 +3387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50454134, y: 0.5135993}
-  m_AnchoredPosition: {x: -1, y: -22}
-  m_SizeDelta: {x: 1360.2942, y: 144.0689}
+  m_AnchoredPosition: {x: -12, y: -22}
+  m_SizeDelta: {x: 1421.7477, y: 144.0689}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031989022
 MonoBehaviour:
@@ -4861,7 +4861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50454134, y: 0.5135993}
-  m_AnchoredPosition: {x: 18, y: -8}
+  m_AnchoredPosition: {x: 4, y: -8}
   m_SizeDelta: {x: 1060.8708, y: 109.9658}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435077801
@@ -5065,7 +5065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.999996, y: 451}
+  m_AnchoredPosition: {x: 16, y: 451}
   m_SizeDelta: {x: 710.0155, y: 64.0663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1566427803
@@ -5674,8 +5674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50454134, y: 0.5135993}
-  m_AnchoredPosition: {x: 8, y: -16}
-  m_SizeDelta: {x: 992.1481, y: 135.1627}
+  m_AnchoredPosition: {x: 13, y: -8}
+  m_SizeDelta: {x: 823.8611, y: 135.1627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663219636
 MonoBehaviour:
@@ -6309,7 +6309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.819, y: 449}
+  m_AnchoredPosition: {x: -37, y: 456}
   m_SizeDelta: {x: 491.515, y: 84.834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1892115052

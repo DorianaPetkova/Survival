@@ -7,20 +7,37 @@ public class LanguageSelector : MonoBehaviour
 {
     public GameObject EN;
     public GameObject BG;
+    private const string SelectedLanguageKey = "SelectedLanguage";
     void Start()
     {
-        EN.SetActive(false);
-        BG.SetActive(true);
+
+        int selectedLanguage = PlayerPrefs.GetInt(SelectedLanguageKey, 0);
+        SetLanguage(selectedLanguage);
+
+    }
+    private void SetLanguage(int languageId)
+    {
+        if (languageId == 0) // Bulgarian
+        {
+            BG.SetActive(false);
+            EN.SetActive(true);
+        }
+        else if (languageId == 1) // English
+        {
+            BG.SetActive(true);
+            EN.SetActive(false);
+        }
     }
     public void English()
     {
-        BG.SetActive(true);
-        EN.SetActive(false);
+        PlayerPrefs.SetInt(SelectedLanguageKey, 1); // Save English as selected language
+        SetLanguage(1);
     }
+
     public void Bulgarian()
     {
-        BG.SetActive(false);
-        EN.SetActive(true);
+        PlayerPrefs.SetInt(SelectedLanguageKey, 0); // Save Bulgarian as selected language
+        SetLanguage(0);
     }
     private bool active = false;
     public void Change(int id)
