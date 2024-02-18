@@ -38,8 +38,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1657497255936
-    m_Localized: You managed to put out the fire, but there is something else you
-      can do to prevent it from starting again.
+    m_Localized: You put out the fire, but there's something you can do to prevent
+      it from starting again.
     m_Metadata:
       m_Items: []
   - m_Id: 1769535504384

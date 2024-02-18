@@ -69,7 +69,7 @@ public class ColliderK : MonoBehaviour
             {
                 towel.SetActive(false);
                 fireOff = true;
-                Debug.Log($"{fireOff}");
+                
             }
 
             if (fireOff)
@@ -93,7 +93,7 @@ public class ColliderK : MonoBehaviour
                 {
                     textAfter.SetActive(true);
                     textStove.SetActive(false);
-                    Debug.Log("textoff, colliders off?");
+                    
 
                 }
 
@@ -103,8 +103,7 @@ public class ColliderK : MonoBehaviour
         if (mainMenu.cluek3 && !fireOff)
         {
             clue.SetActive(true);
-            Debug.Log("put off fire clue true?");
-            Debug.Log($"{clue}");
+            
         }
     }
 

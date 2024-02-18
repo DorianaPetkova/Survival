@@ -22,7 +22,7 @@ public class LevelMoveNext : MonoBehaviour
         {
 
             body.position = new Vector3(-114f, 25f, 0f);
-            Debug.Log("should work");
+           
         }
     }
     void Start()
@@ -38,7 +38,7 @@ public class LevelMoveNext : MonoBehaviour
             // Set specific coordinates for city scene 1
             Vector3 startingPosition = new Vector3(-114f, 25f, 0f);
             body.position = startingPosition;
-            Debug.Log($" CHECK FIRST SCENE{body.position}");
+            
         }
         else
         {
@@ -91,14 +91,13 @@ public class LevelMoveNext : MonoBehaviour
                             break;
                         case 31:
                             startingPosition += new Vector3((offsetX - 80), -(offsetY + 55), 0f);
-                            Debug.Log("from kithen to restaurant");
-                            Debug.Log($"{startingPosition}");
+                            
                             break;
 
 
                         default:
                             startingPosition += new Vector3(offsetX, offsetY, 0f);
-                            Debug.Log("the other default");
+                           
                             break;
                     }
                     body.position = startingPosition;
@@ -123,7 +122,7 @@ public class LevelMoveNext : MonoBehaviour
                 }
                 else if (sceneBuildIndex == 30)
                 {
-                    Debug.Log("restaurant");
+                    
                     Vector3 startingPosition = thirdDoor.transform.position + new Vector3((35), (offsetY + 115), 0f);
                     body.position = startingPosition;
                 }
@@ -132,9 +131,7 @@ public class LevelMoveNext : MonoBehaviour
                 {
                     Vector3 startingPosition = thirdDoor.transform.position - new Vector3((offsetX - 75), (offsetY + 20), 0f);
                     body.position = startingPosition;
-                    Debug.Log("coming from restaurant to street");
-                    Debug.Log($"{thirdDoor.transform.position}");
-                    Debug.Log($"{body.position}");
+                    
                 }
 
             }
@@ -184,7 +181,7 @@ public class LevelMoveNext : MonoBehaviour
 
                         default:
                             startingPosition -= new Vector3(offsetX, -offsetY, 0f);
-                            Debug.Log("defaults at fault");
+                            
                             break;
                     }
                     body.position = startingPosition;

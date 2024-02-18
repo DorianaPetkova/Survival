@@ -40,8 +40,7 @@ public class ClueKmanager : MonoBehaviour
                 kitchen.SetActive(true);
                 restaurant.SetActive(false);
             }
-            Debug.Log(" kitchen clue should be true");
-            Debug.Log($"{mainMenu.cluek2}");
+           
         }
         if (SceneManager.GetActiveScene().buildIndex == 31)
         {

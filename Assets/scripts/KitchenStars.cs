@@ -34,21 +34,25 @@ public class KitchenStars : MonoBehaviour
             {
                 star3.SetActive(false);
                 star2.SetActive(false);
+                
             }
             if (ColliderK.usedW && TextCanvasManager.nofire)
             {
                 star3.SetActive(false);
                 star2.SetActive(true);
+                
             }
             if (!ColliderK.usedW && !TextCanvasManager.nofire)
             {
                 star3.SetActive(false);
                 star2.SetActive(true);
+                
             }
             if (!ColliderK.usedW && TextCanvasManager.nofire)
             {
                 star3.SetActive(true);
                 star2.SetActive(true);
+                
             }
 
 

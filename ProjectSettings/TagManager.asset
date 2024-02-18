@@ -6,6 +6,9 @@ TagManager:
   tags:
   - SceneTransition
   - Audio
+  - colliderStove
+  - colliderWater
+  - colliderTowel
   layers:
   - Default
   - TransparentFX
@@ -63,4 +66,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: black layer
+    uniqueID: 2716483947
     locked: 0

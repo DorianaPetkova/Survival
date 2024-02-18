@@ -23,6 +23,66 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbca4076dc87f8946b162e62631270fc
+    m_Address: text-1708198565773
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0a5843d70ca4f644b0f850e946a3a68
+    m_Address: text-1708198614446
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a88c487a3f10d24b8cec52abaf314d2
+    m_Address: text-1708198628094
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f08ca63def5f1b5459b05d1f2d0ff30b
+    m_Address: text-1708208479630
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c458b4b095ee9e04390dd44dc9a6b1c2
+    m_Address: text-1708198577832
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6b98eb4b9842bc45a57cebc9cdbb1e1
+    m_Address: text-1708198639454
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 284f2f0e67b86f844807197252756fc0
+    m_Address: text-1708198733180
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1aa434e2d213cc84c868c29a505125ee
+    m_Address: text-1708198741374
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3aa1348635ce0d84bbcf1a0ae27d801c
+    m_Address: fire
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bfde0bc3a2a2b3446b1a507441a09422
+    m_Address: earthquake
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 037a0ca1bdfcf5e46970fd38dfcabf82, type: 2}
   m_SchemaSet:

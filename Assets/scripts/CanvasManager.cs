@@ -7,13 +7,13 @@ public class CanvasManager : MonoBehaviour
 {
     private static CanvasManager instance;
 
-    public GameObject canvas1; // Reference to the first canvas
-    public GameObject canvas2; // Reference to the second canvas
-    public GameObject textR; // Reference to the first canvas
+    public GameObject canvas1; 
+    public GameObject canvas2; 
+    public GameObject textR; 
     public GameObject textE;
     public GameObject textK;
-    //public GameObject restaurantText;
-    //public GameObject officeText;
+   
+    
 
     void Start()
     {
@@ -34,8 +34,9 @@ public class CanvasManager : MonoBehaviour
         textR.SetActive(false);
         textE.SetActive(false);
         textK.SetActive(false);
-        //restaurantText.SetActive(false);
-        //officeText.SetActive(false);
+        
+        
+        
     }
 
     void Update()
@@ -50,8 +51,8 @@ public class CanvasManager : MonoBehaviour
                 textE.SetActive(true);
             else
                 textE.SetActive(false);
-            //if (!mainMenu.clue1)
-            //officeText.SetActive(true);
+            
+            
         }
         else if (selectedLevel == "FireHazzard")
         {
@@ -61,13 +62,11 @@ public class CanvasManager : MonoBehaviour
             {
 
                 textR.SetActive(true);
-                Debug.Log("fire should be false");
-                Debug.Log($"{mainMenu.move}");
+                
             }
             else
                 textR.SetActive(false);
-            //if (!mainMenu.cluek1)
-            //restaurantText.SetActive(true);
+            
         }
         if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 29 || SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 26)
         {

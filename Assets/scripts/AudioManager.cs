@@ -179,7 +179,7 @@ public class AudioManager : MonoBehaviour
                 audioFail.Play();
                 visited2 = false;
 
-                Debug.Log("audio finished playing");
+                
 
                 break;
             case 28:
@@ -193,7 +193,7 @@ public class AudioManager : MonoBehaviour
                 audioSourceE.Pause();
                 audiogameFinished.UnPause();
                 audioWin.Play();
-                Debug.Log("win");
+                
                 break;
             case 31:
                 audioSiren.Play();

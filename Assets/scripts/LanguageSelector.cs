@@ -50,6 +50,7 @@ public class LanguageSelector : MonoBehaviour
     IEnumerator SetLocale(int id)
     {
         active = true;
+
         yield return LocalizationSettings.InitializationOperation;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[id];
         active = false;

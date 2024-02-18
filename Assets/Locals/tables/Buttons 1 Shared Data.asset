@@ -19,8 +19,44 @@ MonoBehaviour:
     m_Key: quit
     m_Metadata:
       m_Items: []
-  - m_Id: 11162633175040
-    m_Key: New Entry
+  - m_Id: 13500143960064
+    m_Key: play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14917583831040
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15713264271360
+    m_Key: player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18288092971008
+    m_Key: exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20329150349312
+    m_Key: replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24625162027008
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50196369702912
+    m_Key: alice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51517877452800
+    m_Key: alex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69626474594304
+    m_Key: fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73061928337408
+    m_Key: earthquake
     m_Metadata:
       m_Items: []
   m_Metadata:
@@ -43,5 +79,45 @@ MonoBehaviour:
           m_TableCodes:
           - bg
           - en
+        - m_KeyId: 13500143960064
+          m_TableCodes:
+          - en
+          - bg
+        - m_KeyId: 14917583831040
+          m_TableCodes:
+          - en
+          - bg
+        - m_KeyId: 15713264271360
+          m_TableCodes:
+          - bg
+          - en
+        - m_KeyId: 18288092971008
+          m_TableCodes:
+          - bg
+          - en
+        - m_KeyId: 20329150349312
+          m_TableCodes:
+          - en
+          - bg
+        - m_KeyId: 24625162027008
+          m_TableCodes:
+          - en
+          - bg
+        - m_KeyId: 50196369702912
+          m_TableCodes:
+          - bg
+          - en
+        - m_KeyId: 51517877452800
+          m_TableCodes:
+          - bg
+          - en
+        - m_KeyId: 69626474594304
+          m_TableCodes:
+          - bg
+          - en
+        - m_KeyId: 73061928337408
+          m_TableCodes:
+          - en
+          - bg
         m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
