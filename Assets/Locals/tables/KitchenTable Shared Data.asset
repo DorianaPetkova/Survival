@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: clue put out fire
     m_Metadata:
       m_Items: []
+  - m_Id: 2116033574404096
+    m_Key: leave kitchen
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -29,35 +29,44 @@ public class KitchenStars : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 29)
         {
-            star1.SetActive(true);
-            if (ColliderK.usedW && !TextCanvasManager.nofire)
+            string selectedLevel = GameController.Instance.selectedLevel;
+            if (selectedLevel == "FireHazzard")
             {
-                star3.SetActive(false);
+                star1.SetActive(true);
+                if (ColliderK.usedW && !TextCanvasManager.nofire)
+                {
+                    star3.SetActive(false);
+                    star2.SetActive(false);
+
+                }
+                if (ColliderK.usedW && TextCanvasManager.nofire)
+                {
+                    star3.SetActive(false);
+                    star2.SetActive(true);
+
+                }
+                if (!ColliderK.usedW && !TextCanvasManager.nofire)
+                {
+                    star3.SetActive(false);
+                    star2.SetActive(true);
+
+                }
+                if (!ColliderK.usedW && TextCanvasManager.nofire)
+                {
+                    star3.SetActive(true);
+                    star2.SetActive(true);
+                }
+
+
+            }
+            if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26 || SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 32 || SceneManager.GetActiveScene().buildIndex == 33)
+            {
+                star1.SetActive(false);
                 star2.SetActive(false);
-                
-            }
-            if (ColliderK.usedW && TextCanvasManager.nofire)
-            {
                 star3.SetActive(false);
-                star2.SetActive(true);
-                
             }
-            if (!ColliderK.usedW && !TextCanvasManager.nofire)
-            {
-                star3.SetActive(false);
-                star2.SetActive(true);
-                
-            }
-            if (!ColliderK.usedW && TextCanvasManager.nofire)
-            {
-                star3.SetActive(true);
-                star2.SetActive(true);
-                
-            }
-
-
         }
-        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26 || SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 32 || SceneManager.GetActiveScene().buildIndex == 33)
+        else
         {
             star1.SetActive(false);
             star2.SetActive(false);

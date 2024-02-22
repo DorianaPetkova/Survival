@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TextCanvasManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TextCanvasManager : MonoBehaviour
     public GameObject fire;
     public GameObject textStove;
     public GameObject textFire;
+    public GameObject textExit;
     public GameObject colliderStove1;
 
     public static bool textOff = false;
@@ -21,13 +23,16 @@ public class TextCanvasManager : MonoBehaviour
             textStove.SetActive(false);
         if (fire != null)
             fire.SetActive(true);
+        if (textExit != null)
+            textExit.SetActive(false);
     }
-
-    // Update is called once per frame
     void Update()
     {
-
+        if (SceneManager.GetActiveScene().buildIndex == 32)
+            textExit.SetActive(false);
     }
+    // Update is called once per frame
+
     public void HideText()
     {
         if (textWater != null)
@@ -40,15 +45,16 @@ public class TextCanvasManager : MonoBehaviour
     }
     public void HideText1()
     {
-        Debug.Log("hidetext1");
+
         if (textStove != null)
         {
-            Debug.Log("textstove");
+
             textStove.SetActive(false);
+            textExit.SetActive(true);
             if (fire != null)
             {
                 fire.SetActive(false);
-                Debug.Log("fire is false");
+
             }
             textOff = true;
 
@@ -63,8 +69,7 @@ public class TextCanvasManager : MonoBehaviour
             textFire.SetActive(false);
 
             nofire = true;
-            Debug.Log("works?");
-            Debug.Log($"{nofire}");
+
             colliderStove1.SetActive(false);
 
         }

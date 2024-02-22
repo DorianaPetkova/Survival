@@ -29,12 +29,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-bg
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 27e76f5b35183d740bc89d4c9cc3c2d1
-    m_Address: text-1708199117946
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-bg
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f1d18016a05bfb342a8e150d9158a3c7
     m_Address: text-1708199132581
     m_ReadOnly: 1
@@ -79,6 +73,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f7a576f9aee666f4289dbffb0a74ae34
     m_Address: "\u0437\u0435\u043C\u0435\u0442\u0440\u0435\u0441\u0435\u043D\u0438\u0435"
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-bg
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dfef010436ca9c4680e664d3191a512
+    m_Address: info
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-bg

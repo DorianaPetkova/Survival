@@ -59,6 +59,10 @@ MonoBehaviour:
     m_Localized: Put out the fire
     m_Metadata:
       m_Items: []
+  - m_Id: 2116033574404096
+    m_Localized: Leave the kitchen
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

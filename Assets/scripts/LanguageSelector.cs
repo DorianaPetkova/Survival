@@ -8,9 +8,9 @@ public class LanguageSelector : MonoBehaviour
     public GameObject EN;
     public GameObject BG;
     private const string SelectedLanguageKey = "SelectedLanguage";
+
     void Start()
     {
-
         int selectedLanguage = PlayerPrefs.GetInt(SelectedLanguageKey, 0);
         SetLanguage(selectedLanguage);
 
@@ -21,11 +21,13 @@ public class LanguageSelector : MonoBehaviour
         {
             BG.SetActive(false);
             EN.SetActive(true);
+
         }
         else if (languageId == 1) // English
         {
             BG.SetActive(true);
             EN.SetActive(false);
+
         }
     }
     public void English()

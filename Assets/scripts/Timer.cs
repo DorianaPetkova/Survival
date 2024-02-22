@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    private float timeDuration = 180f;
+    private float timeDuration = 90f;
 
     private float timer;
     public GameObject rectangle;
@@ -22,14 +22,12 @@ public class Timer : MonoBehaviour
     public GameObject star3;
     private float flashTimer;
     private float flashDuration = 1f;
-   
-
 
     private static Timer instance;
     void Start()
     {
-        
-        
+
+
         rectangle.SetActive(false);
 
         if (instance != null && instance != this)
@@ -54,26 +52,29 @@ public class Timer : MonoBehaviour
         float currentTime = timer;
 
         // activate stars based on time
-        if (currentTime < 60f)
+        if (currentTime <= 30f)
         {
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(true);
             Debug.Log("three");
+            Debug.Log($"{currentTime}");
         }
-        else if (currentTime < 120f)
+        else if (currentTime <= 60f && currentTime > 30f)
         {
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(false);
             Debug.Log("two");
+            Debug.Log($"{currentTime}");
         }
-        else if (currentTime < 180f)
+        else if (currentTime <= 90f && currentTime > 60f)
         {
             star1.SetActive(true);
             star2.SetActive(false);
             star3.SetActive(false);
             Debug.Log("one");
+            Debug.Log($"{currentTime}");
         }
         else
         {
@@ -99,11 +100,9 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (Shake.isShaking && Shake.shakeTimeRemaining <= 0 && !startedCounting)
         {
-
-
             SetTextDisplay(true);
             if (!mainMenu.count)
             {
@@ -126,15 +125,26 @@ public class Timer : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 29)
         {
-            CheckAndActivateStars();
-
+            string selectedLevel = GameController.Instance.selectedLevel;
+            if (selectedLevel == "Earthquake")
+                CheckAndActivateStars();
+            else
+            {
+                star1.SetActive(false);
+                star2.SetActive(false);
+                star3.SetActive(false);
+            }
             StopTimer();
             mainMenu.clue1 = false;
             mainMenu.clue2 = false;
             Ebutton.clue4 = false;
             Shake.clue3 = false;
         }
-        if (SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26 || SceneManager.GetActiveScene().buildIndex == 32 || SceneManager.GetActiveScene().buildIndex == 33|| SceneManager.GetActiveScene().buildIndex == 31)
+        if (SceneManager.GetActiveScene().buildIndex == 33)
+        {
+            StopTimer();
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 26 || SceneManager.GetActiveScene().buildIndex == 32 || SceneManager.GetActiveScene().buildIndex == 31)
         {
             StopTimer();
             ResetTimer();

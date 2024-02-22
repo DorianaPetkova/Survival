@@ -69,7 +69,7 @@ public class mainMenu : MonoBehaviour
         if (!GameController.Instance.SceneVisited6 && textCanvas3 != null)
         {
             textCanvas3.SetActive(true);
-            
+
 
         }
         else if (GameController.Instance.SceneVisited6 && textCanvas3 != null)
@@ -87,7 +87,7 @@ public class mainMenu : MonoBehaviour
     public void ShowPauseMenu()
     {
         showmenu = true;
-       
+
         if (AudioManager.Squake)
             earthquakePaused = true;
 
@@ -132,7 +132,7 @@ public class mainMenu : MonoBehaviour
     public void ResumeGame()
     {
         showmenu = false;
-        
+
         if (AudioManager.Squake)
             earthquakePaused = false;
         if (popupCanvas != null)
@@ -208,7 +208,7 @@ public class mainMenu : MonoBehaviour
         if (selectedLevel == "Earthquake")
         {
 
-           
+
             SceneManager.LoadScene("EarthquakeInfo");
 
 
@@ -216,7 +216,7 @@ public class mainMenu : MonoBehaviour
         if (selectedLevel == "FireHazzard")
         {
             SceneManager.LoadScene("FireInfo");
-            
+
 
         }
     }
@@ -239,6 +239,10 @@ public class mainMenu : MonoBehaviour
     public void GenderButton()
     {
         SceneManager.LoadScene("GenderSelection");
+    }
+    public void FinishedButton()
+    {
+        SceneManager.LoadScene("WinScreen");
     }
 
     public void MenuButton()

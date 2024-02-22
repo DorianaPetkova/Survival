@@ -22,7 +22,7 @@ public class CluesManager : MonoBehaviour
     void Update()
     {
         //activating the clues based on the index and events
-        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 29)
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 27 || SceneManager.GetActiveScene().buildIndex == 29|| SceneManager.GetActiveScene().buildIndex == 33)
         {
             office.SetActive(false);
             flashlight.SetActive(false);
