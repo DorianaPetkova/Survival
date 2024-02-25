@@ -12,7 +12,8 @@ public class mainMenu : MonoBehaviour
     public GameObject textCanvas2;
     public GameObject textCanvas3;
     public GameObject textCanvasKitchen;
-
+    public GameObject firecollider;
+    public GameObject clueFire;
 
 
     public static bool clue1 { get; set; } = false;
@@ -20,6 +21,7 @@ public class mainMenu : MonoBehaviour
     public static bool cluek1 { get; set; } = false;
     public static bool cluek2 { get; set; } = false;
     public static bool cluek3 { get; set; } = false;
+
 
     public static bool move { get; set; } = false;
 
@@ -37,7 +39,8 @@ public class mainMenu : MonoBehaviour
         shakeManager = Shake.Instance;
         if (popupCanvas != null)
             popupCanvas.SetActive(false);
-
+        if (clueFire != null)
+            clueFire.SetActive(false);
         // check if the scene has been visited before showing textCanvas
         if (!GameController.Instance.SceneVisited && textCanvas != null)
         {
@@ -78,11 +81,7 @@ public class mainMenu : MonoBehaviour
         }
         if (textCanvas3 != null)
             textCanvas3.SetActive(false);
-
-
-
     }
-
 
     public void ShowPauseMenu()
     {
@@ -200,6 +199,9 @@ public class mainMenu : MonoBehaviour
         {
             textCanvasKitchen.SetActive(false);
             cluek3 = true;
+            firecollider.SetActive(false);
+            if (clueFire != null)
+                clueFire.SetActive(true);
         }
     }
     public void Information()
@@ -288,6 +290,7 @@ public class mainMenu : MonoBehaviour
         Ebutton.gotit = false;
         Ebutton.clue4 = false;
         Shake.clue3 = false;
+
         clue1 = false;
         clue2 = false;
         count = false;
@@ -301,6 +304,9 @@ public class mainMenu : MonoBehaviour
         ColliderK.fireOff = false;
         TextCanvasManager.textOff = false;
         TextCanvasManager.nofire = false;
+
+        extinguisher.fireOff1 = false;
+        extinguisher.clueOFF = false;
 
     }
     public void StartButton()

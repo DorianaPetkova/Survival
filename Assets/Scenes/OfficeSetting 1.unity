@@ -207,6 +207,8 @@ MonoBehaviour:
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
   textCanvasKitchen: {fileID: 0}
+  firecollider: {fileID: 0}
+  clueFire: {fileID: 0}
 --- !u!114 &93646282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1952,8 +1954,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: 84}
-  m_SizeDelta: {x: 741.63, y: 227.174}
+  m_AnchoredPosition: {x: 26.255005, y: 72.086}
+  m_SizeDelta: {x: 751.7667, y: 237.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745626461
 MonoBehaviour:
@@ -3002,6 +3004,8 @@ MonoBehaviour:
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
   textCanvasKitchen: {fileID: 0}
+  firecollider: {fileID: 0}
+  clueFire: {fileID: 0}
 --- !u!114 &1082502052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3369,6 +3373,8 @@ MonoBehaviour:
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
   textCanvasKitchen: {fileID: 0}
+  firecollider: {fileID: 0}
+  clueFire: {fileID: 0}
 --- !u!114 &1153397503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3968,8 +3974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.50454134, y: 0.5135993}
-  m_AnchoredPosition: {x: 41, y: 50}
-  m_SizeDelta: {x: 769.873, y: 224.435}
+  m_AnchoredPosition: {x: 49.17, y: 10.259}
+  m_SizeDelta: {x: 780.0302, y: 273.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511441569
 MonoBehaviour:

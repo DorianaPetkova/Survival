@@ -57,24 +57,21 @@ public class Timer : MonoBehaviour
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(true);
-            Debug.Log("three");
-            Debug.Log($"{currentTime}");
+
         }
         else if (currentTime <= 60f && currentTime > 30f)
         {
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(false);
-            Debug.Log("two");
-            Debug.Log($"{currentTime}");
+
         }
         else if (currentTime <= 90f && currentTime > 60f)
         {
             star1.SetActive(true);
             star2.SetActive(false);
             star3.SetActive(false);
-            Debug.Log("one");
-            Debug.Log($"{currentTime}");
+
         }
         else
         {
@@ -149,7 +146,7 @@ public class Timer : MonoBehaviour
             StopTimer();
             ResetTimer();
             HideStars();
-            Debug.Log("the stars shall we be hidden");
+
             mainMenu.clue1 = false;
             mainMenu.clue2 = false;
             Ebutton.clue4 = false;

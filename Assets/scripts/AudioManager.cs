@@ -179,7 +179,7 @@ public class AudioManager : MonoBehaviour
                 audioFail.Play();
                 visited2 = false;
 
-                
+
 
                 break;
             case 28:
@@ -187,13 +187,19 @@ public class AudioManager : MonoBehaviour
                     audioWin.Play();
 
                 break;
-            case 29:
+            case 32:
                 audioSiren.Pause(); audioSource.Pause();
                 audioSiren.Pause();
                 audioSourceE.Pause();
                 audiogameFinished.UnPause();
                 audioWin.Play();
-                
+                break;
+            case 33:
+                audioSiren.Pause(); audioSource.Pause();
+                audioSiren.Pause();
+                audioSourceE.Pause();
+                audiogameFinished.UnPause();
+                audioWin.Play();
                 break;
             case 31:
                 audioSiren.Play();
