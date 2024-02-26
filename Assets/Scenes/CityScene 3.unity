@@ -1785,7 +1785,7 @@ SpriteRenderer:
   m_SortingLayerID: -1860896291
   m_SortingLayer: -4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e22416ca699cda34f8f7c7616e2cacd7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77673ecddd52d4549abcc35c52ca6275, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1805,8 +1805,8 @@ Transform:
   m_GameObject: {fileID: 1009727684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 459.75125, y: 292.9369, z: -1.0046157}
-  m_LocalScale: {x: 159.53362, y: 159.83531, z: 1.5884204}
+  m_LocalPosition: {x: 406, y: 314, z: -1.0046157}
+  m_LocalScale: {x: 68.96762, y: 69.09804, z: 0.68668646}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1847,7 +1847,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 3.48}
+    oldSize: {x: 6.26, y: 7.68}
     newSize: {x: 12.8, y: 7.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2803,6 +2803,8 @@ MonoBehaviour:
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
   textCanvasKitchen: {fileID: 0}
+  firecollider: {fileID: 0}
+  clueFire: {fileID: 0}
 --- !u!114 &1750348162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3405,6 +3407,8 @@ MonoBehaviour:
   textCanvas2: {fileID: 0}
   textCanvas3: {fileID: 0}
   textCanvasKitchen: {fileID: 0}
+  firecollider: {fileID: 0}
+  clueFire: {fileID: 0}
 --- !u!114 &2137279050
 MonoBehaviour:
   m_ObjectHideFlags: 0
